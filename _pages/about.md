@@ -93,7 +93,7 @@ Better to wrap them with an .md file
 
 <p><b>Review</b></p>  
   <ul style="list-style-type:square;">
-    <li>Journal: IEEE Signal Processing Letters</li>
+    <li>IEEE Signal Processing Letters</li>
     <li>Inverse Problems</li>
     <li>IEEE Transactions on Image Processing</li>
   </ul> 
