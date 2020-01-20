@@ -1,0 +1,39 @@
+---
+layout: page
+---
+
+{% if page.profile %}
+  <div class="profile col one {{ page.profile.align }}">
+    {% if page.profile.image %}
+      <img class="one" src="{{ page.profile.image | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}   
+    {% if page.profile.address %}
+      <div class="address">
+        <center>{{ page.profile.address }}</center>
+      </div>
+      <div class="email">
+        <center>{{ page.profile.email }}</center>
+      </div>       
+    {% endif %}
+  </div>
+{% endif %}
+
+
+<div class="text_home">
+  {{ content }}
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
