@@ -21,13 +21,6 @@
   .social-icons-right { text-align: right; }
   .img_row { height: 91.6666666667px; }
   .col { padding: 1.6666666667px; } }
-@media screen and (min-width: 48em) { html { font-size: 18px; }
-  .img_row { height: 183.3333333333px; }
-  .col { padding: 3.3333333333px; } }
-@media screen and (min-width: 64em) { html { font-size: 20px; }
-  .img_row { height: 275px; }
-  .col { padding: 5px; } }
-@media screen and (min-width: 78em) { em img { max-width: 56rem; margin-left: -7em; } }
 /*!
 
   BASSCSS
@@ -359,7 +352,7 @@ body { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: 
   .site-nav .menu-icon > svg path { fill: #424242; }
   .site-nav input ~ .trigger { clear: both; display: none; }
   .site-nav input:checked ~ .trigger { display: block; padding-bottom: 5px; }
-  .site-nav .page-link { display: block; padding: 5px 10px; margin-left: 10px; }
+  .site-nav .page-link { display: block; padding: 5px 10px; margin-left: -10px; }
   .site-nav .page-link:not(:last-child) { margin-right: 0; } }
 
 .header-bar { border-bottom: 1px solid #ccc; font-size: 20px; display: block; opacity: 0.75; width: 100%; text-align: center; padding-top: 25px; padding-bottom: 4rem; line-height: 3em; z-index: 25; }
