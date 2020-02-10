@@ -341,7 +341,7 @@ body { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: 
 
 .site-title { font-size: 20px; line-height: 56px; letter-spacing: -1px; margin-bottom: 0; margin-left: -245px; color: white; }
 
-.site-nav { font-size: 20px; float: right; line-height: 56px; margin-right: -300px; }
+.site-nav { font-size: 20px; float: left; line-height: 56px; margin-right: -300px; }
 .site-nav .nav-trigger { display: none; }
 .site-nav .menu-icon { display: none; }
 .site-nav .page-link { line-height: 1.5; }

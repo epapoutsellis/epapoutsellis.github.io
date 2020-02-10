@@ -70,10 +70,7 @@ social: True
 | 09/2019 	|  *Multi-Channel tomographic reconstruction using the Core Imaging Library*, [2nd IMA Conference On Inverse Problems From Theory To Application](https://ima.org.uk/11329/2nd-ima-conference-on-inverse-problems-from-theory-to-application/), London, UK.  	|
 
 |-------------	|----------	|
-| 10/2019 	|  *Multi-Channel tomographic reconstruction using the Core Imaging Library*, [The 4th Annual Advances in X-Ray Imaging Workshop](https://www.diamond.ac.uk/Home/Events/2019/Advances-in-X-ray-Imaging0.html), Diamond Light Source, STFC Harwell Campus, UK.  	|
-
-|-------------	|----------	|
-| 03/2015 	|  *Mathematical Imaging: A journey from Theory to Applications*, [SET for Britain competition](http://www.setforbritain.org.uk/index.asp), London, UK.  	|
+| 06/2019 	|  *Multi-Channel tomographic reconstruction using the Core Imaging Library*, [The 4th Annual Advances in X-Ray Imaging Workshop](https://www.diamond.ac.uk/Home/Events/2019/Advances-in-X-ray-Imaging0.html), Diamond Light Source, STFC Harwell Campus, UK.  	|
 
 |-------------	|----------	|
 | 10/2014 	|  *Total variation regularisation in PET reconstruction*, Workshop on Variational Methods in Imaging, [RICAM](https://www.ricam.oeaw.ac.at/), Linz, Austria  	|
