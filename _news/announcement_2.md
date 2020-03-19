@@ -1,6 +1,0 @@
----
-date: 12/2019 
-inline: true
----
-
-Hackathon: Core Imaging Library, 16-18 December 2019 :computer:
