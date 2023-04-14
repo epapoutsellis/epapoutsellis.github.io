@@ -27,5 +27,5 @@ Prior to this, I was a Computational Imaging Scientist (permanent) at the [Scien
 
 I completed my [Master of Advanced Study, Part III of Mathematical Tripos](https://www.maths.cam.ac.uk/postgrad/part-iii/prospective.html), University of Cambridge in 2011 and a 5 year Diploma in the [Department of Applied Mathematics and Physical Sciences](http://semfe.ntua.gr/en/) at the [National Technical University of Athens](https://www.ntua.gr/en/) in 2010.
 
-For more details please see [cv](/cv/) (updated April 2023).
+For more details please see [cv](https://epapoutsellis.github.io/cv/) (updated April 2023).
 
