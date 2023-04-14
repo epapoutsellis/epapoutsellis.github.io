@@ -63,6 +63,58 @@ html[data-theme=dark] .repo-img-dark {
   display: block;
 }
 
+/*******************************************************************************
+ * ADDED: Custom colors
+ ******************************************************************************/
+/*******************************************************************************
+ * ADDED: Custom theme
+ ******************************************************************************/
+:root {
+  --global-bg-color: #ffffff;
+  --global-code-bg-color: rgba(181, 9, 172, 0.05);
+  --global-text-color: #000000;
+  --global-text-color-light: #828282;
+  --global-theme-color: #E65100;
+  --global-hover-color: #FF9800;
+  --global-footer-bg-color: #1C1C1D;
+  --global-footer-text-color: #e8e8e8;
+  --global-footer-link-color: #ffffff;
+  --global-distill-app-color: #828282;
+  --global-divider-color: #E65100;
+  --global-card-bg-color: #ffffff;
+}
+:root .fa-sun {
+  display: none;
+}
+:root .fa-moon {
+  padding-left: 10px;
+  padding-top: 12px;
+  display: block;
+}
+
+html[data-theme=dark] {
+  --global-bg-color: #000000;
+  --global-code-bg-color: #2c3237;
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #828282;
+  --global-theme-color: #2ce0a1;
+  --global-hover-color: #1cbd85;
+  --global-footer-bg-color: #e8e8e8;
+  --global-footer-text-color: #1C1C1D;
+  --global-footer-link-color: #000000;
+  --global-distill-app-color: #e8e8e8;
+  --global-divider-color: #2ce0a1;
+  --global-card-bg-color: #212121;
+}
+html[data-theme=dark] .fa-sun {
+  padding-left: 10px;
+  padding-top: 12px;
+  display: block;
+}
+html[data-theme=dark] .fa-moon {
+  display: none;
+}
+
 /******************************************************************************
  * Content
  ******************************************************************************/
@@ -84,7 +136,7 @@ body.sticky-bottom-footer {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .profile img {
@@ -100,18 +152,7 @@ body.sticky-bottom-footer {
 /*******************************************************************************
  * Styles for the base elements of the theme.
  ******************************************************************************/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-em,
-div,
-li,
-span,
-strong {
+p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
   color: var(--global-text-color);
 }
 
@@ -119,30 +160,25 @@ hr {
   border-top: 1px solid var(--global-divider-color);
 }
 
-table td,
-table th {
+table td, table th {
   color: var(--global-text-color);
 }
 table td {
   font-size: 1rem;
 }
 
-a,
-table.table a {
+a, table.table a {
   color: var(--global-theme-color);
 }
-a:hover,
-table.table a:hover {
+a:hover, table.table a:hover {
   color: var(--global-theme-color);
   text-decoration: underline;
 }
-a:hover:after :not(.nav-item.dropdown),
-table.table a:hover:after :not(.nav-item.dropdown) {
+a:hover:after :not(.nav-item.dropdown), table.table a:hover:after :not(.nav-item.dropdown) {
   width: 100%;
 }
 
-figure,
-img {
+figure, img {
   max-width: 90vw;
 }
 
@@ -184,8 +220,7 @@ blockquote {
   align-items: center;
 }
 
-.citation,
-.citation-number {
+.citation, .citation-number {
   color: var(--global-theme-color);
 }
 
@@ -212,7 +247,7 @@ blockquote {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 32%;
   }
   .profile .address p {
     display: block;
@@ -415,8 +450,7 @@ footer.sticky-bottom {
   justify-content: center;
   display: flow-root;
 }
-.tag-list ul p,
-.tag-list ul li {
+.tag-list ul p, .tag-list ul li {
   list-style: none;
   display: inline-block;
   padding: 1rem 0.5rem;
@@ -489,8 +523,7 @@ footer.sticky-bottom {
   display: flex;
   align-items: center;
 }
-.projects .grid-sizer,
-.projects .grid-item {
+.projects .grid-sizer, .projects .grid-item {
   width: 250px;
   margin-bottom: 10px;
 }
@@ -536,6 +569,11 @@ footer.sticky-bottom {
   margin-bottom: 1rem;
 }
 .publications ol.bibliography li .preview {
+  width: 100%;
+  min-width: 80px;
+  max-width: 200px;
+}
+.publications ol.bibliography li .preview_tmp {
   width: 100%;
   min-width: 80px;
   max-width: 200px;
@@ -590,20 +628,16 @@ footer.sticky-bottom {
   padding-right: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  margin-left: 0;
 }
 .publications ol.bibliography li .links a.btn:hover {
   color: var(--global-theme-color);
   border-color: var(--global-theme-color);
 }
-.publications ol.bibliography li .badges {
-  padding-bottom: 0.5rem;
-}
 .publications ol.bibliography li .badges span {
   display: inline-block;
   color: #000000;
   height: 100%;
-  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   vertical-align: middle;
 }
 .publications ol.bibliography li .badges span:hover {
@@ -643,6 +677,12 @@ footer.sticky-bottom {
 .publications ol.bibliography li div.abstract.hidden.open {
   border-color: var(--global-text-color);
 }
+.publications ol.bibliography li div.teaser.hidden {
+  border: var(--global-bg-color);
+}
+.publications ol.bibliography li div.teaser.hidden.open {
+  border-color: var(--global-text-color);
+}
 
 figure.highlight {
   margin: 0 0 1rem;
@@ -654,11 +694,9 @@ pre {
   border-radius: 6px;
   padding: 6px 12px;
 }
-pre pre,
-pre code {
+pre pre, pre code {
   background-color: transparent;
   border-radius: 0;
-  margin-bottom: 0;
   padding: 0;
 }
 
@@ -750,32 +788,6 @@ progress::-moz-progress-bar {
   height: inherit;
 }
 
-pre {
-  padding: 8px 12px;
-  position: relative;
-  /* Copy code to clipboard button */
-}
-pre .copy {
-  background: var(--global-card-bg-color);
-  border-color: var(--global-bg-color);
-  border-radius: 0.3rem;
-  border-style: solid;
-  color: var(--global-text-color);
-  font-size: medium;
-  opacity: 0;
-  position: absolute;
-  right: 0.25rem;
-  top: 0.25rem;
-}
-pre .copy:active, pre .copy:focus, pre .copy:hover {
-  color: var(--global-hover-color);
-  opacity: 1;
-}
-pre:active .copy, pre:focus .copy, pre:hover .copy {
-  color: var(--global-hover-color);
-  opacity: 1;
-}
-
 /*******************************************************************************
  * Style overrides for distill blog posts.
  ******************************************************************************/
@@ -797,40 +809,17 @@ d-byline a:hover, d-article d-byline a:hover {
 d-article {
   border-top-color: var(--global-divider-color) !important;
 }
-d-article p, d-article h1, d-article h2, d-article h3, d-article h4, d-article h5, d-article h6, d-article li, d-article table {
+d-article a, d-article p, d-article h1, d-article h2, d-article h3, d-article h4, d-article h5, d-article h6, d-article li, d-article table {
   color: var(--global-text-color) !important;
 }
-d-article h1, d-article h2, d-article hr, d-article table, d-article table th, d-article table td {
+d-article a, d-article h1, d-article h2, d-article hr, d-article table, d-article table th, d-article table td {
   border-bottom-color: var(--global-divider-color) !important;
 }
-d-article a {
-  color: var(--global-theme-color) !important;
-}
 d-article a:hover {
-  color: var(--global-theme-color) !important;
+  border-bottom-color: var(--global-hover-color) !important;
 }
 d-article b i {
   display: inline;
-}
-d-article details {
-  color: var(--global-text-color);
-  background-color: var(--global-code-bg-color);
-  margin-top: 0;
-  padding: 8px 12px;
-  position: relative;
-  border-radius: 6px;
-  display: block;
-  margin-bottom: 20px;
-  grid-column: text;
-  overflow: auto;
-  max-width: 100%;
-}
-d-article details summary {
-  color: var(--global-theme-color);
-}
-d-article details p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 d-article d-contents {
   align-self: start;
@@ -915,6 +904,129 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   d-article d-contents nav {
     grid-column: none;
   }
+}
+/*******************************************************************************
+ * ADDED: Custom styles (overides _base)
+ ******************************************************************************/
+footer.fixed-bottom .container {
+  text-align: center;
+}
+
+footer.sticky-bottom {
+  text-align: center;
+}
+
+.post-header .profile img {
+  width: 25vw;
+}
+.post-header .desc {
+  color: var(--global-theme-color);
+}
+.post-header .address {
+  color: var(--global-text-color);
+}
+.post-header .address a {
+  color: var(--global-text-color);
+}
+.post-header .social {
+  text-align: left;
+}
+.post-header .social .contact-icons {
+  font-size: 2.5rem;
+}
+.post-header .social .contact-icons a i::before {
+  color: var(--global-text-color);
+  transition-property: all 0.2s ease-in-out;
+}
+.post-header .social .contact-icons a:hover i::before {
+  color: var(--global-theme-color);
+}
+.post-header .social .contact-note {
+  font-size: 0.9rem;
+}
+
+.projects .card .card-title {
+  font-size: 1.5rem;
+}
+.projects .card:hover {
+  transform: scale(1.01);
+}
+
+.outreach a {
+  text-decoration: none;
+}
+.outreach a:hover .card-title {
+  color: var(--global-theme-color);
+}
+.outreach .card img {
+  width: 100%;
+}
+.outreach .card .card-title {
+  font-size: 1.5rem;
+}
+.outreach .card:hover {
+  transform: scale(1.01);
+}
+.outreach .grid-sizer, .outreach .grid-item {
+  width: 300px;
+  margin-bottom: 10px;
+}
+.outreach h2.category {
+  color: var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-top: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.publications {
+  margin-top: 2rem;
+}
+.publications ol.bibliography li .author a {
+  border-bottom: 1px dashed var(--global-text-color);
+  color: var(--global-text-color);
+}
+.publications ol.bibliography li .author a:hover {
+  border-bottom-style: solid;
+  text-decoration: none;
+  color: var(--global-hover-color);
+}
+.publications ol.bibliography li .author > em {
+  color: var(--global-theme-color);
+}
+.publications ol.bibliography li .pub-note {
+  font-size: small;
+  font-style: italic;
+  color: var(--global-theme-color);
+}
+
+.header-bar {
+  border-bottom: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.header-bar h1 {
+  font-size: 3.5rem;
+}
+.header-bar h2 {
+  font-size: 1.75rem;
+}
+
+.blog-metadata {
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: small;
+}
+.blog-metadata .tag-list {
+  border-bottom: none;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+}
+.blog-metadata .tag-list ul p, .blog-metadata .tag-list ul li {
+  padding: 0rem 0rem;
+}
+.blog-metadata .tag-list a {
+  color: var(--global-text-color-light);
 }
 
 /*# sourceMappingURL=main.css.map */
