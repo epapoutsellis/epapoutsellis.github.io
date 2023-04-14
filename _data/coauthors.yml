@@ -1,34 +1,84 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+########################
+Withers:
+    url: https://www.research.manchester.ac.uk/portal/p.j.withers.html 
 
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+Tauber:
+    url: http://www.gtim-univ-tours.fr/tauber/  
 
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+Bergounioux:
+    url: https://maitinebergounioux.net/PagePro/
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+Calatroni:
+    url: https://sites.google.com/view/lucacalatroni/home 
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+Burger:
+    url: https://en.www.math.fau.de/applied-mathematics-prof-burger/members/prof-dr-martin-burger/
 
-"Przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"Schönlieb":
+    url: http://www.damtp.cam.ac.uk/user/cbs31/Home.html                      
 
-"Schrödinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+Papafitsoros:
+    url: http://kostaspapafitsoros.weebly.com/
 
-"Lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+Lionheart:
+    url: http://vummath.ma.man.ac.uk/~bl/
 
-"Planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+Destrieux:
+    url: https://www.univ-tours.fr/site-de-l-universite/m-christophe-destrieux--23856.kjsp 
+    
+Stute:
+    url: https://scholar.google.fr/citations?hl=fr&user=-OXk9BcAAAAJ&view_op=list_works&sortby=pubdate    
+
+Yannakakis:
+    url: https://sites.google.com/site/nyannak/    
+
+Ametova:
+    url: https://scholar.google.be/citations?hl=en&user=f68NQvoAAAAJ&view_op=list_works&sortby=pubdate    
+
+Jørgensen:
+    url: http://www.imm.dtu.dk/~jakj/    
+
+Warr:
+    url: https://www.researchgate.net/profile/Ryan-Warr-2
+
+Cernik:
+    url: https://www.research.manchester.ac.uk/portal/b.cernik.html   
+        
+Pasca:
+    url: https://www.researchgate.net/profile/Edoardo-Pasca
+    
+Burca:
+    url: https://www.isis.stfc.ac.uk/Pages/Dr-Genoveva-Burca.aspx  
+    
+Thielemans:
+    url: https://iris.ucl.ac.uk/iris/browse/profile?upi=KTHIE60   
+    
+Turner:
+    url: https://www.research.manchester.ac.uk/portal/martin.turner.html
+
+Chilingaryan:
+    url: https://www.linkedin.com/in/suren-chilingaryan-5501636/?originalSubdomain=de    
+
+Handschuh:
+    url: https://www.researchgate.net/profile/Stephan-Handschuh    
+
+Ehrhardt:
+    url: https://mehrhardt.github.io/  
+
+Brown:
+    url: https://github.com/rijobro
+
+Delplancke:
+    url: https://clairedelplancke.github.io/   
+
+Gillman:
+    url: https://scholar.google.com.au/citations?user=8gMgi8MAAAAJ&hl=en          
+
+Ovtchinnikov:
+    url: https://scholar.google.com/citations?user=OrV2WKoAAAAJ&hl=en  
+
+Kolbitsch:
+    url: https://scholar.google.com/citations?user=6URCSMUAAAAJ&hl=en
+
+Fardell:
+    url: https://www.linkedin.com/in/gemma-fardell-6198024a/?originalSubdomain=uk              

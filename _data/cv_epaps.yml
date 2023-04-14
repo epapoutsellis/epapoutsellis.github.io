@@ -1,0 +1,72 @@
+- title: Employment
+  type: time_table
+  contents:
+    - title: Senior Research Scientist
+      institution: Finden Ltd, Oxford, UK
+      year: Since Oct, 2022
+
+    - title: Computational Imaging Scientist
+      institution: Science and Technology Facilities Council, Oxford, UK
+      year: Oct, 2020 - Oct, 2022
+
+    - title: Research Associate
+      institution: Department of Materials & Department of Mathematics, University of Manchester, UK
+      year: Nov, 2018 - Sep, 2020
+
+    - title: Postdoctoral Researcher
+      institution: Faculty of Medicine, University of Tours, France
+      year: Jan, 2017 - Oct, 2018
+
+    - title: Postdoctoral Researcher
+      institution: Institute Denis Poisson, University of Orleans, France
+      year: Jan, 2016 - Dec, 2016
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD in Mathematical Image Processing
+      institution: Cambridge Image Analysis, Departement of Applied Mathematics and Theoretical Phycics
+      thesis: First-order gradient regularisation methods for image restoration.      
+      url_thesis: https://www.repository.cam.ac.uk/handle/1810/256216 
+      year: Oct, 2011 - Oct, 2015
+      advisor: Prof. Carola-Bibiane Schönlieb 
+      url: http://www.damtp.cam.ac.uk/user/cbs31/Home.html 
+      
+    - title: Master of Advanced Study, Part III of Mathematical Tripos
+      institution: Centre of Mathematical Sciences, University of Cambridge
+      year: Oct, 2010 - Jul, 2011
+      thesis: Oscillating patterns in images.
+      grade: Awarded with Merit
+      advisor: Prof. Carola-Bibiane Schönlieb
+      url: http://www.damtp.cam.ac.uk/user/cbs31/Home.html     
+
+    - title: Diploma in Applied Mathematics and Physical Sciences
+      institution: National Technical University of Athens
+      year: Sep, 2004 - Jun, 2010
+      thesis:  Boundary Value Problems and the Mountain Pass Theorem.
+      grade: 8.33 out of 10.00  
+      advisor: Prof. Nikolaos Yannakakis
+
+- title: Awards
+  type: time_table
+  contents:
+    - year: Nov, 2022
+      items: 3rd Place at the Helsinky Tomography Challenge (HTC) 2022, Limited Angle Tomography Competition, Finnish Inverse Problems Society (FIPS)
+      url: https://www.fips.fi/HTCresults.php#anchor1
+    - year: Aug, 2022
+      items: UKRI In Year Award - Individual Award, for contribution in CIL and CCPi 
+    - year: Mar, 2020
+      items: Computational Science Centre for Research Communities (CoSec) Impact Award, 3rd place 
+      url: https://www.scd.stfc.ac.uk/Pages/CoSeC_Impact_Award_Nov2020.aspx
+    - year: Mar, 2020
+      items: Selected to present a poster at the House of Commons, Westminster, for the STEM for BRITAIN Exhibition in the Mathematical Sciences
+      url: https://webarchive.nationalarchives.gov.uk/ukgwa/20220203164324/https://stfc.ukri.org/news-events-and-publications/whats-happening/stfc-at-stem-for-britain/
+    - year: Sep, 2019
+      items: Poster Prize at Tomography for Scientific Advancement (TOSCA), 2nd place, Southampton
+    - year: Mar, 2014
+      items: Selected to present a poster at the House of Commons, Westminster, for the STEM for BRITAIN Exhibition in the Mathematical Sciences
+    - year: Oct, 2011
+      items: 
+          - Embiricos Trust Scholarship, Jesus College, University of Cambridge, 2011 - 2014
+          - EPSRC Scholarship (fees only), Department of Applied Mathematics and Theoretical Physics, University of Cambridge, 2011 - 2014
+

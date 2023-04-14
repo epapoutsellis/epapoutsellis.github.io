@@ -1,8 +1,7 @@
----
+<!-- ---
 layout: cv
-permalink: /cv/
-title: cv
+permalink: /cv1/
+title: cv1
 nav: true
-nav_order: 4
-cv_pdf: example_pdf.pdf
----
+nav_order: 5
+--- -->

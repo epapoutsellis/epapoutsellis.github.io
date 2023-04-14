@@ -1,84 +1,429 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
+######################################
+##### Preprints ######################
+######################################
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+@preprint{Ashley2023,
+author = {Ashley G Gillman and  Min Han Quah and Evangelos Papoutsellis and Kris Thielemans and Claire Delplancke
+          and Jurgen Fripp and Edoardo Pasca and Jason A Dowling},
+title = {{Anatomically-guided deconvolution of PET using directional total variation regularization}},
+year = {2023},
+abstract = {{Positron emission tomography (PET) provides quantitative functional
+imaging of biomarkers unavailable in other modalities, however, images are of
+relatively low resolution compared to modalities such as magnetic resonance
+imaging (MRI). A typical approach is to reconstruct to a higher resolution and
+regularize using a structural image, but there are practical limitations to this
+approach. Alternatively, post-reconstruction approaches involve image-based
+correction, but typically rely on a segmentation which may be difficult or even
+ambiguous to find, depending on the anatomical region or deformities.
+Here, we perform super-resolution by utilising iterative deconvolution,
+regularized by minimizing shared directional total variation (dTV) with an
+anatomical MRI image. We present results on synthetic and clinical data. For
+the former, PET acquisitions were simulated using an analytic PET simulation.
+The Gaussian blurring model parameters for deconvolution were optimized on a
+simplistic phantom simulation with a total variation prior. This model was then
+applied to deconvolve realistic synthetic data using dTV, which was
+synthesized to include PET-unique lesions. The model was also applied to a
+single 18F-florbetaben study acquired over 10 minutes.
+Gray matter-white matter contrast increased using dTV compared with baseline,
+however, where an accurate segmentation is available, traditional partial
+volume correction techniques are superior. Hence, dTV-regularised
+deconvolution can perform PVC and super-resolution in situations where a
+reliable segmentation cannot be achieved. With appropriate hyper-parameter
+selection, dTV deconvolution can preserve PET-unique features.}},
+contribution = {CO}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+
+@preprint{2301.05888,
+author = {Andreas Kofler and Fabian Altekr{\"u}ger and Fatima Antarou Ba and Christoph Kolbitsch and Evangelos Papoutsellis and David Schote and Clemens Sirotenko and Felix Zimmermann and Kostas Papafitsoros},
+title = {Learning Regularization Parameter-Maps for Variational Image Reconstruction using Deep Neural Networks and Algorithm Unrolling},
+year = {2023},
+arxiv = {2301.05888},
+abstract = {{We introduce a method for fast estimation of data-adapted, 
+            spatio-temporally dependent regularization parameter-maps for variational image 
+            reconstruction, focusing on total variation (TV)-minimization. 
+            Our approach is inspired by recent developments in algorithm unrolling using 
+            deep neural networks (NNs), and relies on two distinct sub-networks. T
+            he first sub-network estimates the regularization parameter-map from the input data. 
+            The second sub-network unrolls T iterations of an iterative algorithm which approximately 
+            solves the corresponding TV-minimization problem incorporating the previously estimated 
+            regularization parameter-map. The overall network is trained end-to-end in a supervised 
+            learning fashion using pairs of clean-corrupted data but crucially without the need of 
+            having access to labels for the optimal regularization parameter-maps. 
+            We prove consistency of the unrolled scheme by showing that the unrolled energy functional used for the supervised learning Γ-converges as T 
+            tends to infinity, to the corresponding functional that incorporates the exact solution map 
+            of the TV-minimization problem. We apply and evaluate our method on a variety of large scale and dynamic imaging problems 
+            in which the automatic computation of such parameters has been so far challenging: 2D dynamic cardiac MRI reconstruction, 
+            quantitative brain MRI reconstruction, low-dose CT and dynamic image denoising. The proposed method consistently improves 
+            the TV-reconstructions using scalar parameters and the obtained parameter-maps adapt well to each imaging problem and data by 
+            leading to the preservation of detailed features. Although the choice of the regularization parameter-maps is data-driven and based on NNs, the proposed algorithm is entirely interpretable since it inherits the properties of the respective iterative reconstruction method from which the network is implicitly defined.}},
+code = {https://github.com/koflera/LearningRegularizationParameterMaps},
+teaser = {merge_gifs},
+contribution = {CO}
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  selected={true}
+
+@preprint{Bergounioux_2018,
+  title = {{Infimal convolution spatiotemporal PET reconstruction using total variation based priors}},
+  author = {Bergounioux, Ma{\"i}tine and Papoutsellis, Evangelos and Stute, Simon and Tauber, Clovis},
+  html = {https://hal.archives-ouvertes.fr/hal-01694064},
+  year = {2018},
+  keywords = {Total Variation  ; Total generalized variation ; Infimal convolution  ; Spatiotemporal regularization  ; Dynamic Positron Emission Tomography  ;  Primal-Dual Hybrid Gradient optimization methods},
+  hal = {hal-01694064},
+  pdf = {2018_BPST.pdf},
+  contribution = {AO}
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+######################################
+##### Journals ######################
+######################################
+
+@article{Brown2021,
+  doi = {10.1098/rsta.2020.0208},
+  html = {https://doi.org/10.1098/rsta.2020.0208},
+  year = {2021},
+  journal = {{Philosophical Transactions of the Royal Society A: Mathematical,  Physical and Engineering Sciences}},  
+  publisher = {The Royal Society},
+  volume = {379},
+  number = {2204},
+  pages = {20200208},
+  author = {Richard Brown and Christoph Kolbitsch and Claire Delplancke and Evangelos Papoutsellis and Johannes Mayer and Evgueni Ovtchinnikov and Edoardo Pasca and Radhouene Neji and Casper da Costa-Luis and Ashley G. Gillman and Matthias J. Ehrhardt and Jamie R. McClelland and Bjoern Eiben and Kris Thielemans},
+  title = {{Motion estimation and correction for simultaneous {PET}/{MR} using {SIRF} and {CIL}}},
+  abstract = {{SIRF is a powerful PET/MR image reconstruction research tool for processing 
+              data and developing new algorithms. In this research, new developments to SIRF are presented, 
+              with focus on motion estimation and correction. SIRF's recent inclusion of the adjoint of the 
+              resampling operator allows gradient propagation through resampling, enabling the MCIR technique. 
+              Another enhancement enabled registering and resampling of complex images, suitable for MRI. 
+              Furthermore, SIRF's integration with the optimization library CIL enables the use of novel algorithms. 
+              Finally, SPM is now supported, in addition to NiftyReg, for registration. 
+              Results of MR and PET MCIR reconstructions are presented, using FISTA and PDHG, respectively. 
+              These demonstrate the advantages of incorporating motion correction and variational and structural priors.}},
+  code = {https://github.com/SyneRBI/SIRF-Contribs/tree/master/src/Python/sirf/contrib/MCIR},
+  pdf = {2021_Motion estimation and correction for simultaneous PETMR using SIRF and CIL_Brown et al.pdf},
+  contribution = {CO}
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
+@article{Jorgensen2021,
+  doi = {10.1098/rsta.2020.0192},
+  html = {https://doi.org/10.1098/rsta.2020.0192},
+  year = {2021},
+  publisher = {The Royal Society},
+  volume = {379},
+  number = {2204},
+  pages = {20200192},
+  author = {Jakob S. J{\o}rgensen and Evelina Ametova and Genoveva Burca and Gemma Fardell and Evangelos Papoutsellis and Edoardo Pasca and Kris Thielemans and Martin Turner and Ryan Warr and William R. B. Lionheart and Philip J. Withers},
+  title = {Core Imaging Library - Part I: a versatile Python framework for tomographic imaging},
+  journal = {Philosophical Transactions of the Royal Society A: Mathematical,  Physical and Engineering Sciences},
+  abstract = {{We present the Core Imaging Library (CIL), an open-source Python framework for tomographic imaging 
+              with particular emphasis on reconstruction of challenging datasets. Conventional filtered back-projection 
+              reconstruction tends to be insufficient for highly noisy, incomplete, non-standard or multi-channel data arising 
+              for example in dynamic, spectral and in situ tomography. CIL provides an extensive modular optimization framework 
+              for prototyping reconstruction methods including sparsity and total variation regularization, as well as tools for 
+              loading, preprocessing and visualizing tomographic data. The capabilities of CIL are demonstrated on a synchrotron 
+              example dataset and three challenging cases spanning golden-ratio neutron tomography, cone-beam X-ray laminography 
+              and positron emission tomography.}},
+  code = {https://github.com/TomographicImaging/Paper-2021-RSTA-CIL-Part-I},
+  arxiv = {2102.04560},
+  pdf = {2021_Core Imaging Library - Part I A versatile Python framework for tomographic imaging_Jørgensen et al.pdf},
+  poster = {poster_STEM_for_Britain.pdf},
+  contribution = {LAPIO}
 }
 
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
+@article{Papoutsellis2021,
+  doi = {10.1098/rsta.2020.0193},
+  html = {https://doi.org/10.1098/rsta.2020.0193},
+  year = {2021},
+  publisher = {The Royal Society},
+  volume = {379},
+  number = {2204},
+  pages = {20200193},
+  author = {Evangelos Papoutsellis and Evelina Ametova and Claire Delplancke and Gemma Fardell and Jakob S. J{\o}rgensen and Edoardo Pasca and Martin Turner and Ryan Warr and William R. B. Lionheart and Philip J. Withers},
+  title = {Core Imaging Library - Part {II}: multichannel reconstruction for dynamic and spectral tomography},
+  journal = {Philosophical Transactions of the Royal Society A: Mathematical,  Physical and Engineering Sciences},
+  code = {https://github.com/TomographicImaging/Paper-2021-RSTA-CIL-Part-II},
+  abstract = {{The newly developed core imaging library (CIL) is a flexible plug and play library for tomographic imaging with a 
+              specific focus on iterative reconstruction. CIL provides building blocks for tailored regularized reconstruction algorithms 
+              and explicitly supports multichannel tomographic data. In the first part of this two-part publication, we introduced the 
+              fundamentals of CIL. This paper focuses on applications of CIL for multichannel data, e.g. dynamic and spectral. 
+              We formalize different optimization problems for colour processing, dynamic and hyperspectral tomography and demonstrate CIL’s 
+              capabilities for designing state-of-the-art reconstruction methods through case studies and code snapshots.}},
+  arxiv = {2102.06126},
+  pdf = {2021_Core Imaging Library - Part II Multichannel reconstruction for dynamic and spectral tomography_Papoutsellis et al.pdf},
+  poster = {https://editor.postreality.io/view/addf28cc-2830-11ec-966e-d792f7fbd6cb},
+  contribution = {LAPIO}
 }
 
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif}
+@article{Ametova_2021,
+	doi = {10.1088/1361-6463/ac02f9},
+	html = {https://doi.org/10.1088/1361-6463/ac02f9},
+	year = 2021,
+	publisher = {{IOP} Publishing},
+	volume = {54},
+	number = {32},
+	pages = {325502},
+	author = {Evelina Ametova and Genoveva Burca and Suren Chilingaryan and Gemma Fardell and Jakob S J{\o}rgensen and Evangelos Papoutsellis and Edoardo Pasca and Ryan Warr and Martin Turner and William R B Lionheart and Philip J Withers},
+	title = {Crystalline phase discriminating neutron tomography using advanced reconstruction methods},
+	journal = {Journal of Physics D: Applied Physics},
+	abstract = {Time-of-flight (ToF) neutron imaging offers complementary attenuation contrast to x-ray computed tomography, coupled with the ability to extract additional information from the variation in attenuation as a function of neutron energy (ToF) at every point (voxel) in the image. In particular, Bragg edge positions provide crystallographic information and therefore enable the identification of crystalline phases directly. Here we demonstrate Bragg edge tomography with high spatial and spectral resolution. We propose a new iterative tomographic reconstruction method with a tailored regularisation term to achieve high quality reconstruction from low-count data, where conventional filtered back-projection (FBP) fails. The regularisation acts in a separated mode for spatial and spectral dimensions and favours characteristic piece-wise constant and piece-wise smooth behaviour in the respective dimensions. The proposed method is compared against FBP and a state-of-the-art regulariser for multi-channel tomography on a multi-material phantom. The proposed new regulariser which accommodates specific image properties outperforms both conventional and state-of-the-art methods and therefore facilitates Bragg edge fitting at the voxel level. The proposed method requires significantly shorter exposures to retrieve features of interest. This in turn facilitates more efficient usage of expensive neutron beamline time and enables the full utilisation of state-of-the-art high resolution detectors.},
+  code = {https://github.com/TomographicImaging/Paper-2021-JPhysD-NT},
+  arxiv = {2102.06706},
+  pdf = {2021_Crystalline phase discriminating neutron tomography using advanced reconstruction methods_Ametova et al.pdf},
+  contribution = {LAPIO},
+  teaser = {paper_neutron.png}, 
+}
+
+@article{Warr2021,
+  doi = {10.1038/s41598-021-00146-4},
+  html = {https://doi.org/10.1038/s41598-021-00146-4},
+  year = {2021},
+  publisher = {Springer Science and Business Media {LLC}},
+  volume = {11},
+  number = {1},
+  author = {Ryan Warr and Evelina Ametova and Robert J. Cernik and Gemma Fardell and Stephan Handschuh and Jakob S. J{\o}rgensen and Evangelos Papoutsellis and Edoardo Pasca and Philip J. Withers},
+  title = {Enhanced hyperspectral tomography for bioimaging by spatiospectral reconstruction},
+  journal = {Nature Scientific Reports},
+  abstract = {{Here we apply hyperspectral bright field imaging to collect computed tomographic images with excellent energy resolution (~ 1 keV), applying it for the first time to map the distribution of stain in a fixed biological sample through its characteristic K-edge. Conventionally, because the photons detected at each pixel are distributed across as many as 200 energy channels, energy-selective images are characterised by low count-rates and poor signal-to-noise ratio. This means high X-ray exposures, long scan times and high doses are required to image unique spectral markers. Here, we achieve high quality energy-dispersive tomograms from low dose, noisy datasets using a dedicated iterative reconstruction algorithm. This exploits the spatial smoothness and inter-channel structural correlation in the spectral domain using two carefully chosen regularisation terms. For a multi-phase phantom, a reduction in scan time of 36 times is demonstrated. Spectral analysis methods including K-edge subtraction and absorption step-size fitting are evaluated for an ex vivo, single (iodine)-stained biological sample, where low chemical concentration and inhomogeneous distribution can affect soft tissue segmentation and visualisation. The reconstruction algorithms are available through the open-source Core Imaging Library. Taken together, these tools offer new capabilities for visualisation and elemental mapping, with promising applications for multiply-stained biological specimens.}},
+  arxiv = {2103.04796},
+  pdf = {2021_Enhanced hyperspectral tomography for bioimaging by spatiospectral reconstruction_Warr et al.pdf},
+  contribution = {LAPIO},
+  teaser = {merge_gifs}
+}
+
+@article{Bergounioux_2018_SIIMS,
+author = {Bergounioux, M. and Papoutsellis, E.},
+title = {An Anisotropic Inf-Convolution BV Type Model for Dynamic Reconstruction},
+journal = {SIAM Journal on Imaging Sciences},
+year = {2018},
+volume = {11},
+number = {1},
+pages = {129-163},
+doi = {10.1137/16M1104937},
+html = { https://epubs.siam.org/doi/10.1137/16M1104937},
+hal = {hal-01401408v3},  
+abstract = {{We are interested in a spatial-temporal variational model for image sequences. The model involves a fitting data term adapted to different modalities, such as denoising, deblurring, or emission tomography. The regularizing term acts as an infimal-convolution type operator that takes into account the respective influence of space and time variables in a separate mode. We give existence and uniqueness results and provide optimality conditions via duality analysis.
+}},
+pdf = {2018_An anisotropic inf-convolution BV type model for dynamic reconstruction_Bergounioux, Papoutsellis.pdf},
+contribution = {AO}
+}
+
+@article{Burger_2016,
+author={Burger, Martin and Papafitsoros, Konstantinos and Papoutsellis, Evangelos and Sch{\"o}nlieb, Carola-Bibiane},
+title={{Infimal Convolution Regularisation Functionals of BV and $L^p$ Spaces. Part I: The finite p case}},
+journal={Journal of Mathematical Imaging and Vision},
+year={2016},
+day={01},
+volume={55},
+number={3},
+pages={343--369},
+issn={1573-7683},
+doi={10.1007/s10851-015-0624-6},
+html={https://doi.org/10.1007/s10851-015-0624-6},
+arxiv={1504.01956.pdf},
+abstract = {{The aim of this paper is to test and analyse a novel technique for image reconstruction in positron emission tomography, which is based on (total variation) regularization on both the image space and the projection space. We formulate our variational problem considering both total variation penalty terms on the image and on an idealized sinogram to be reconstructed from a given Poisson distributed noisy sinogram. We prove existence, uniqueness and stability results for the proposed model and provide some analytical insight into the structures favoured by joint regularization. For the numerical solution of the corresponding discretized problem we employ the split Bregman algorithm and extensively test the approach in comparison to standard total variation regularization on the image. The numerical results show that an additional penalty on the sinogram performs better on reconstructing images with thin structures.}},
+pdf = {2016_Infimal Convolution Regularisation Functionals of BV and Lp Spaces Part I The Finite p Case_Burger et al.pdf},
+preview = {Untitled.png},
+contribution = {AO}
+}
+
+@article{Burger_2014,
+	doi = {10.1088/0266-5611/30/10/105003},
+	html = {https://doi.org/10.1088%2F0266-5611%2F30%2F10%2F105003},
+	year = 2014,
+	publisher = {{IOP} Publishing},
+	volume = {30},
+	number = {10},
+	pages = {105003},
+	author = {Martin Burger and Jahn M{\"u}ller and Evangelos Papoutsellis and Carola-Bibiane Sch\"onlieb},
+	title = {Total variation regularization in measurement and image space for {PET} reconstruction},
+	journal = {Inverse Problems},
+  url = {https://iopscience.iop.org/article/10.1088/0266-5611/30/10/105003/meta},
+  arxiv = {1403.1272},
+  abstract = {{The aim of this paper is to test and analyse a novel technique for image reconstruction in positron emission tomography, which is based on (total variation) regularization on both the image space and the projection space. We formulate our variational problem considering both total variation penalty terms on the image and on an idealized sinogram to be reconstructed from a given Poisson distributed noisy sinogram. We prove existence, uniqueness and stability results for the proposed model and provide some analytical insight into the structures favoured by joint regularization. For the numerical solution of the corresponding discretized problem we employ the split Bregman algorithm and extensively test the approach in comparison to standard total variation regularization on the image. The numerical results show that an additional penalty on the sinogram performs better on reconstructing images with thin structures.}},
+  pdf = {2014_Total variation regularization in measurement and image space for PET reconstruction_Burger et al.pdf},
+  contribution = {AO}  
+}
+
+######################################
+##### inproceedings ##################
+######################################
+
+@inproceedings{ISMRM_2023,
+  author = {Andreas Kofler and Fabian Altekr{\"u}ger and Fatima Antarou Ba and Christoph Kolbitsch and Evangelos Papoutsellis and David Schote and Clemens Sirotenko and Felix Frederik Zimmermann and Kostas Papafitsoros},
+  title = {CNN--Based Estimation of Spatio-Temporal Regularization Parameter-Maps for
+TV-based Reconstruction in Dynamic cardiac MRI},
+abstract = {{We propose a method for estimating spatio--temporal regularization parameter-maps to be used for dynamic cardiac MRI image
+reconstruction using total variation TV-minimization. Based on recent developments in algorithm un--rolling using Neural
+Networks (NNs), our approach uses two sub--networks. The first one predicts a spatio-temporal regularization parameter-map
+from an input image. Then, a second sub-network approximately solves a TV--reconstruction problem which is
+formulated with the estimated registration parameter--map. We show that the proposed method significantly improves the
+TV-reconstructions using only a single scalar regularization parameter and that the obtained parameter--maps match the
+problem-specific exppectations in terms of local features.}},
+year = {03-08 June 2023},
+booktitle = {ISMRM & ISMRT Annual Meeting & Exhibition, Toronto, Canada},
+contribution = {CO},
+teaser = {paper_dynamic_mri_ismrm.jpg}
+}
+
+@inproceedings{SIRF_Fully3D,
+  author = {Richard Brown and  Christoph Kolbitsch and  Evgueni Ovtchinnikov and Johannes Mayer and Ashley G. Gillman and Edoardo Pasca,
+Claire Delplancke and  Evangelos Papoutsellis and  Gemma Fardell and Radhouene Neji and Casper da Costa-Luis and Jamie McClelland and
+Bjoern Eiben and Matthias J. Ehrhardt, and Kris Thielemans},
+  title = {Status update on the Synergistic Image Reconstruction Framework:
+version 3.0},
+year = {2021},
+booktitle = {16th International Meeting on Fully 3D Image Reconstruction in Radiology and Nuclear Medicine},
+arxiv = {2110.04143},
+abstract = {{The Synergistic Image Reconstruction Framework (SIRF) is
+a research tool for reconstructing data from multiple imaging modalities,
+currently most prominently PET and MR. Included are acquisition
+models, reconstruction algorithms, registration tools, and regularisation
+models. In this work, we demonstrate the capabilities added since
+SIRF 2.0. PET/MR cardiac imaging results are presented with estimation
+of respiratory motion from the MR data, and motion compensation
+combined with various regularisation strategies used for both MR and
+PET reconstruction. The use of SIRF to facilitate this work enabled a
+range of techniques to be compared quickly and efficiently.}},
+pdf = {2021_Status update on the Synergistic Image Reconstruction Framework _Brown et al.pdf},
+contribution = {CO}
+}
+
+@inproceedings{Neutron_Fully3D,
+  author = {Evelina Ametova and  Genoveva Burca and  Gemma Fardell and Jakob S. J{\o}rgensen and Evangelos Papoutsellis and Edoardo Pasca and
+Ryan Warr and  Martin Turner and  William R. B. Lionheart and Philip J. Withers},
+  title = {Joint reconstruction with a correlative regularisation technique
+for multi-channel neutron tomography},
+year = {2021},
+booktitle = {16th International Meeting on Fully 3D Image Reconstruction in Radiology and Nuclear Medicine},
+arxiv = {2110.04143},
+abstract = {{Time-of-flight (ToF) energy-dispersive neutron tomography is
+complimentary to X-ray tomographic imaging method aimed at the
+reconstruction of wavelength-dependent material response in every
+three-dimensional volume element. ToF neutron tomography has already
+demonstrated great potential for both mapping of crystallographic
+properties and elemental composition in micrometer scale. However,
+available neutron beams have inherently low fluxes and high ToF
+resolution comes at the cost of prohibitively long exposure times. In this
+paper we investigate application of advanced iterative reconstruction
+algorithms with both spatial and spectral regularisation to reduce
+exposure time. The capability of advanced reconstruction algorithms is
+demonstrated on a specifically designed multi-material sample.}},
+pdf = {2021_Joint reconstruction with a correlative regularisation technique for multi-channel neutron tomography_Ametova et al.pdf},
+contribution = {LAPIO}
+}
+
+@inproceedings{Burger_2016_IFIP,
+author="Burger, Martin
+and Papafitsoros, Konstantinos
+and Papoutsellis, Evangelos
+and Sch{\"o}nlieb, Carola-Bibiane",
+editor="Bociu, Lorena
+and D{\'e}sid{\'e}ri, Jean-Antoine
+and Habbal, Abderrahmane",
+title="Infimal Convolution Regularisation Functionals of BV and L^p Spaces. The Case p=\infty",
+booktitle="System Modeling and Optimization",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="169--179",
+isbn="978-3-319-55795-3",
+arxiv = {1510.09032.pdf},
+html = {https://www.springer.com/gp/book/9783319557946},
+pdf = {2016_Infimal convolution regularisation functionals of BV and Lp spaces. The case p = ∞_Burger et al.pdf},
+contribution = {AO}
+}
+
+######################################
+##### Thesis ########################
+######################################
+
+@phdthesis{Thesis_2015,
+  doi = {10.17863/CAM.155},
+  html = {https://www.repository.cam.ac.uk/handle/1810/256216},
+  author = {Papoutsellis,  Evangelos},
+  keywords = {total variation regularisation,  Radon transform,  sinogram space regularisation,  Bregman distance,  split Bregman algorithm,  thin structures,  first-order regularisers,  infimal convolution,  image decomposition,  TVLp regularisers,  total generalised variation,  staircasing effect,  positron emission tomography reconstruction,  Research Subject Categories::MATHEMATICS::Applied mathematics},
+  language = {en},
+  title = {First-order gradient regularisation methods for image restoration: reconstruction of tomographic images with thin structures and denoising piecewise affine images},
+  publisher = {University of Cambridge},
+  year = {2016},
+  copyright = {All Rights Reserved}
+}
+
+######################################
+##### Dataset ########################
+######################################
+
+@dataset{ryan_warr_2022_5825464,
+  author       = {Ryan Warr and
+                  Jakob Sauer Jørgensen and
+                  Evangelos Papoutsellis and
+                  Evelina Ametova and
+                  Robert Cernik and
+                  Philip J. Withers},
+  title        = {{Hyperspectral X-ray CT datasets of an aluminium 
+                   phantom containing three metal-based powders}},
+  year         = 2022,
+  publisher    = {Zenodo},
+  version      = 3,
+  doi          = {10.5281/zenodo.5825464},
+  html          = {https://doi.org/10.5281/zenodo.5825464},
+  teaser = {dataset_aluminium_phantom.png}  
+}
+
+@dataset{ryan_warr_2022_5826212,
+  author       = {Ryan Warr and
+                  Jakob Sauer Jørgensen and
+                  Evangelos Papoutsellis and
+                  Evelina Ametova and
+                  Stephan Handschuh and
+                  Robert Cernik and
+                  Philip J. Withers},
+  title        = {{Hyperspectral X-ray CT dataset of a single, 
+                   iodine-stained lizard head sample}},
+  year         = 2022,
+  publisher    = {Zenodo},
+  version      = 4,
+  doi          = {10.5281/zenodo.5826212},
+  html          = {https://doi.org/10.5281/zenodo.5826212},
+  teaser      = {dataset_lizard.png}
+}
+
+@dataset{ryan_warr_2020_4157615,
+  author       = {Ryan Warr and
+                  Christopher Egan and
+                  Evangelos Papoutsellis and
+                  Jakob Sauer Jørgensen and
+                  Evelina Ametova and
+                  Robert Cernik and
+                  Philip J. Withers},
+  title        = {{Hyperspectral X-ray CT data set of mineralised ore 
+                   sample with Au and Pb deposits}},
+  year         = 2020,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.4157615},
+  html          = {https://doi.org/10.5281/zenodo.4157615},
+  teaser      = {dataset_au_pb_rock.png}
+}
+
+
+@dataset{jakob_sauer_jorgensen_2021_4273969,
+  author       = {Jakob Sauer Jørgensen and
+                  Genoveva Burca and
+                  Evelina Ametova and
+                  Evangelos Papoutsellis and
+                  Edoardo Pasca and
+                  Gemma Fardell and
+                  Martin Turner and
+                  William R. B. Lionheart and
+                  Philip J. Withers},
+  title        = {{Neutron tomography data of high-purity metal rods 
+                   using golden-ratio angular acquisition (IMAT,
+                   ISIS)}},
+  year         = 2021,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.4273969},
+  html          = {https://doi.org/10.5281/zenodo.4273969},
+  teaser      = {dataset_imat.png}
 }
