@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - master
+      - epaps
       - main
   pull_request:
     branches:
