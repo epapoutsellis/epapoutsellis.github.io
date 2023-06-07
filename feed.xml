@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="epapoutsellis/feed.xml" rel="self" type="application/atom+xml" /><link href="epapoutsellis/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-07T08:47:15+00:00</updated><id>epapoutsellis/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="epapoutsellis/feed.xml" rel="self" type="application/atom+xml" /><link href="epapoutsellis/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-07T08:49:00+00:00</updated><id>epapoutsellis/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">CIL on the Cloud</title><link href="epapoutsellis/blog/2023/cil-colab/" rel="alternate" type="text/html" title="CIL on the Cloud" /><published>2023-06-06T15:59:00+00:00</published><updated>2023-06-06T15:59:00+00:00</updated><id>epapoutsellis/blog/2023/cil-colab</id><content type="html" xml:base="epapoutsellis/blog/2023/cil-colab/"><![CDATA[<p>In this blog, we will demonstrate how to use the Core Imaging Library (CIL), an open source software for imaging inverse problems, on cloud platforms like Binder and Google Colab. These platforms offer cloud-based environments with pre-installed packages and resources, making them highly suitable for teaching and training purposes. In addition, if you do not have a GPU or you are a macOS user without GPU or without the right GPU these cloud platforms serve as an excellent alternative. Or maybe you lost connection to your Windows/Linux remote machines and you really want to reconstruct a tomographic dataset.</p>
 
 <h2 id="outline">Outline</h2>
@@ -99,6 +99,8 @@ The next version of Python (3.11) is scheduled to have its final regular bug fix
 <p>5) Install CIL with the Astra-Toolbox backend and the CCPi-Regularisation Toolkit using <code class="language-plaintext highlighter-rouge">conda</code>.</p>
 
 <p>You can try this notebook directly on Google Colab.</p>
+
+<p><a href="https://colab.research.google.com/github/epapoutsellis/blogs/CIL_Cloud.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" /></a></p>
 
 <h3 id="check-python-version-">Check Python version <a class="anchor" id="subsection31"></a></h3>
 
