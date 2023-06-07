@@ -27,6 +27,8 @@
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
+        
+
     <!-- Styles -->
     
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8F%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
@@ -113,7 +115,8 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- _layouts/post.html -->
+      
+        <!-- _layouts/post.html -->
 
 <div class="post">
 
@@ -137,7 +140,9 @@
   </header>
 
   <article class="post-content">
-    <p>This theme supports rendering beautiful math in inline and display modes using <a href="https://www.mathjax.org/" rel="external nofollow noopener" target="_blank">MathJax 3</a> engine. You just need to surround your math expression with <code class="language-plaintext highlighter-rouge">$$</code>, like <code class="language-plaintext highlighter-rouge">$$ E = mc^2 $$</code>. If you leave it inside a paragraph, it will produce an inline expression, just like \(E = mc^2\).</p>
+    
+    <div id="markdown-content">
+      <p>This theme supports rendering beautiful math in inline and display modes using <a href="https://www.mathjax.org/" rel="external nofollow noopener" target="_blank">MathJax 3</a> engine. You just need to surround your math expression with <code class="language-plaintext highlighter-rouge">$$</code>, like <code class="language-plaintext highlighter-rouge">$$ E = mc^2 $$</code>. If you leave it inside a paragraph, it will produce an inline expression, just like \(E = mc^2\).</p>
 
 <p>To use display mode, again surround your expression with <code class="language-plaintext highlighter-rouge">$$</code> and place it as a separate paragraph. Here is an example:</p>
 
@@ -155,14 +160,16 @@ MathJax will automatically number equations:</p>
 
 <p>Note that MathJax 3 is <a href="https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html" rel="external nofollow noopener" target="_blank">a major re-write of MathJax</a> that brought a significant improvement to the loading and rendering speed, which is now <a href="http://www.intmath.com/cg5/katex-mathjax-comparison.php" rel="external nofollow noopener" target="_blank">on par with KaTeX</a>.</p>
 
+    </div>
   </article>
 </div>
 
+      
     </div>
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
-        © Copyright 2023 Evangelos  Papoutsellis. Last updated: May 24, 2023.
+        © Copyright 2023 Evangelos  Papoutsellis. Last updated: June 07, 2023.
       </div>
     </footer>
 
@@ -181,7 +188,9 @@ MathJax will automatically number equations:</p>
     
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
-  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/zoom.js"></script>
+
+  <!-- Load Common JS -->
   <script defer src="/assets/js/common.js"></script>
 
     
