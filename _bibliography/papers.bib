@@ -10,6 +10,19 @@
 author = {Jakob Sauer Jørgensen and Evangelos Papoutsellis and Laura Murgatroyd and Gemma Fardell and Edoardo Pasca},
 title = {A directional regularization method for the limited-angle Helsinki Tomography Challenge using the Core Imaging Library (CIL)},
 year = {2023},
+abstract = {This article presents the algorithms developed by the Core Imaging Library (CIL) developer
+team for the Helsinki Tomography Challenge 2022. The challenge focused on reconstructing 2D
+phantom shapes from limited-angle computed tomography (CT) data. The CIL team designed and
+implemented five reconstruction methods using CIL (https://ccpi.ac.uk/cil/), an open-source
+Python package for tomographic imaging. The CIL team adopted a model-based reconstruction
+strategy, unique to this challenge with all other teams relying on deep-learning techniques. The
+CIL algorithms showcased exceptional performance, with one algorithm securing the third place
+in the competition. The best-performing algorithm employed careful CT data pre-processing and
+an optimization problem with single-sided directional total variation regularization combined with
+isotropic total variation and tailored lower and upper bounds. The reconstructions and segmentations achieved high quality for data with angular ranges down to 50 degrees, and in some cases
+acceptable performance even at 40 and 30 degrees. This study highlights the effectiveness of modelbased approaches in limited-angle tomography and emphasizes the importance of proper algorithmic
+design leveraging on available prior knowledge to overcome data limitations. Finally, this study
+highlights the flexibility of CIL for prototyping and comparison of different optimization methods.},
 arxiv = {arXiv:2310.01671},
 code = {https://github.com/TomographicImaging/CIL-HTC2022-Algo2},
 teaser = {htc_cil_recons_datasets.png},
