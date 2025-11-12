@@ -595,26 +595,78 @@ footer.sticky-bottom {
           padding: 10px;
         }
       }
-      .hidden.open {
-        max-height: 100em;
-        transition-property: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
+      .hidden {
+        font-size: 0.875rem;
+        max-height: 0;           /* no 'px' needed */
+        overflow: hidden;
+        text-align: justify;
+        transition: max-height 0.15s ease;  /* was using transition-property incorrectly */
+        will-change: max-height;
+      p {
+        line-height: 1.4;
+        margin: 10px;
       }
-      div.abstract.hidden {
-        border: dashed 1px var(--global-bg-color);
+      pre {
+        font-size: 1em;
+        line-height: 1.4;
+        padding: 10px;
+          }
       }
-      div.abstract.hidden.open {
-        border-color: var(--global-text-color);
+    .hidden.open {
+      max-height: 100em;       /* expand height; transition already defined above */
       }
-      div.teaser.hidden {
-        border: var(--global-bg-color);
-      }
-      div.teaser.hidden.open {
-        border-color: var(--global-text-color);
-      }             
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .hidden { transition: none; }
+    }
+    /* Abstract borders */
+    div.abstract.hidden {
+      border: 1px dashed var(--global-bg-color);
+    }
+    div.abstract.hidden.open {
+      border-color: var(--global-text-color);
+    }
+    /* Teaser: valid border + responsive grid so PNG/GIFs fit regardless of size */
+    div.teaser.hidden {
+      border: 1px solid var(--global-bg-color);  /* was invalid before */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      align-items: center;
+      padding: 8px; /* optional breathing room */
+    }
+    div.teaser.hidden.open {
+      border-color: var(--global-text-color);
+    }
+    /* Teaser images: scale to cell, keep aspect ratio */
+    div.teaser.hidden img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;   /* prevents cropping of tall/wide PNGs */
+      display: block;
+      /* optional cap so one very tall image doesn't dominate */
+      max-height: 360px;
+    }
+      // .hidden.open {
+      //   max-height: 100em;
+      //   transition-property: 0.15s ease;
+      //   -moz-transition: 0.15s ease;
+      //   -ms-transition: 0.15s ease;
+      //   -o-transition: 0.15s ease;
+      //   transition: all 0.15s ease;
+      // }
+      // div.abstract.hidden {
+      //   border: dashed 1px var(--global-bg-color);
+      // }
+      // div.abstract.hidden.open {
+      //   border-color: var(--global-text-color);
+      // }
+      // div.teaser.hidden {
+      //   border: var(--global-bg-color);
+      // }
+      // div.teaser.hidden.open {
+      //   border-color: var(--global-text-color);
+      // }             
     }
   }
 }
