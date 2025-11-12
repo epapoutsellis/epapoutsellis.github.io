@@ -751,7 +751,7 @@ progress {
   top: 56px;
   z-index: 10;
   /* Dimensions */
-  width: 100%;
+  width: 70%;
   height: 1px;
   /* Reset the appearance */
   -webkit-appearance: none;
@@ -778,7 +778,7 @@ progress::-moz-progress-bar {
 }
 
 .progress-container {
-  width: 100%;
+  width: 70%;
   background-color: transparent;
   position: fixed;
   top: 56px;
