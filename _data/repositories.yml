@@ -6,11 +6,11 @@ open_source_repos:
     url: https://github.com/TomographicImaging/CIL-Demos
     description: A collection of jupyter notebooks, designed to introduce you to CIL.
   - name: ndtomo
-    url: https://github.com/antonyvam/nDTomo/tree/master
-    description: nDTomo is a Python-based software suite for the simulation, visualization, pre-processing, reconstruction, and analysis of chemical imaging and X-ray tomography data, with a focus on hyperspectral datasets such as X-ray powder diffraction computed tomography or XRD-CT.
+    url: https://github.com/antonyvam/nDTomo
+    description: nDTomo is a Python-based software suite for the simulation, visualization, pre-processing, reconstruction, and analysis of chemical imaging and X-ray tomography data.
   - name: BIL
     url: https://github.com/antonyvam/BatteryImagingLibrary
-    description: BIL is the first multi-modal multi-length scale battery imaging database. <a href = "https://www.batteryimaginglibrary.com"></a>
+    description: BIL is the first multi-modal multi-length scale battery imaging database. <a href="https://www.batteryimaginglibrary.com">https://www.batteryimaginglibrary.com</a>'
 
 reproduce_papers: 
   - name: Why do we regularise in every iteration for imaging inverse problems
