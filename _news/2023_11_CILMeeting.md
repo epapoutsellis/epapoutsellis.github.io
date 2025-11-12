@@ -5,7 +5,7 @@ inline: true
 ---
 
 
-**Talk:** I gave at talk at the first [CIL User Meeting](https://ccpi.ac.uk/events/first-cil-user-meeting/) about "Stochastic Optimisation in CIL". [Slides](/assets/pdf/2023_CIL_User_Meeting_EPapoutsellis_StochasticOpt.pdf)
+**Invited Talk:** I gave at talk at the first [CIL User Meeting](https://ccpi.ac.uk/events/first-cil-user-meeting/) about "Stochastic Optimisation in CIL". [Slides](/assets/pdf/2023_CIL_User_Meeting_EPapoutsellis_StochasticOpt.pdf)
 
 
 
