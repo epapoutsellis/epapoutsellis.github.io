@@ -217,7 +217,7 @@
           {% if entry.teaser -%}
 
             <!-- better to merge gifs -->
-            {% if entry.key=="2301.05888" %}
+            <!-- {% if entry.key=="2301.05888" %}
               <div class="teaser hidden">
                 <img src="../assets/img/publication_preview/paper_dynamic_mri_unrolled_nn_xu_kz20.gif" width="19%"/> 
                 <img src="../assets/img/publication_preview/paper_dynamic_mri_unrolled_nn_xf_kz20.gif" width="19%"/>
@@ -230,13 +230,13 @@
                 <img src="../assets/img/publication_preview/paper_hyperspectral_lizard_fdk_recon.gif" width="45%"/> 
                 <img src="../assets/img/publication_preview/paper_hyperspectral_lizard_tv_tgv_recon.gif" width="45%"/> 
               </div>
-            {% else %}
+            {% else %} -->
             <!-- Hidden teaser block -->
             <div class="teaser hidden">
               <img class="teaser z-depth-1 rounded" src="{{ entry.teaser | prepend: '/assets/img/publication_preview/' | relative_url }}">
             </div>
-            {%- endif -%}
-          {%- endif -%}          
+            <!-- {%- endif -%} -->
+        {%- endif -%}          
 
           {% if entry.bibtex_show -%}
           <!-- Hidden bibtex block -->
