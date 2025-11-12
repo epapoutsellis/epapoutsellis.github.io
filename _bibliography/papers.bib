@@ -5,7 +5,23 @@
 ##### Preprints ######################
 ######################################
 
-@article{Dong2025,
+@preprint{Docherty2025,
+  title = {Battery Imaging Library: Multi-length scale and multi-modal synchrotron and laboratory battery imaging data for all},
+  url = {http://dx.doi.org/10.26434/chemrxiv-2025-sbp73},
+  DOI = {10.26434/chemrxiv-2025-sbp73},
+  publisher = {American Chemical Society (ACS)},
+  author = {Docherty,  Ronan and Riley,  Sam and Morley,  John D. and Papoutsellis,  Evangelos and Bobitan,  Antonia Diana and Donoghue,  Jack and Rankin,  Katy and Alvarez Borges,  Fernando and Salinas-Farran,  Luis and Michalik,  Stefan and Liptak,  Alexander and Burca,  Genoveva and Autran,  Pierre-Olivier and Wright,  Jon and Kockelmann,  Winfried and Gutowski,  Olof and Dippel,  Ann-Christin and von Zimmermann,  Martin and Matras,  Dorota and Winiarski,  Bartlomiej and Mangum,  John and Finegan,  Donal and Gott,  James A. and Proprentner,  Daniela and Dong,  Hongyang and George,  Chandramohan and Beale,  Andrew M. and Jacques,  Simon D.M. and Cooper,  Samuel J. and Vamvakeros,  Antonis},
+  year = {2025},
+  month = sep,
+  abstract = {{Battery research increasingly relies on advanced imaging, yet open access to such data remains rare, scattered across various sources, and difficult to find. The Battery Imaging Library (BIL) is the first open, curated collection of multi-modal and multi-length scale battery imaging datasets, accompanied by a searchable, FAIR-compliant website. Distinctive features include the release of raw experimental data (radiographs, sinograms, X-ray and electron diffraction patterns) together with rare operando and multi-resolution datasets. Each dataset is linked to Zenodo DOIs with metadata, ensuring persistence and citability; open-source Python scripts for preprocessing and reconstruction are also provided for each modality. BIL enables algorithm benchmarking, machine learning, and teaching using realistic, industrially relevant data. By combining coverage across modalities, length scales, and chemistries with raw data accessibility and a FAIR-aligned web platform, the Battery Imaging Library provides a foundation for openness and reproducibility in battery imaging. The library is available here: https://www.batteryimaginglibrary.com}},
+  contribution = {CO},
+  chemrxiv = {68d3b52b3e708a7649ffd0a5},
+  teaser = {teaser_bil.png},
+  html = {https://www.batteryimaginglibrary.com/},
+  code = {https://github.com/antonyvam/BatteryImagingLibrary}
+}
+
+@preprint{Dong2025,
   title = {BeamStop: A software for analysing chemical imaging and tomography data},
   url = {http://dx.doi.org/10.26434/chemrxiv-2025-m1v5v},
   DOI = {10.26434/chemrxiv-2025-m1v5v},
@@ -14,7 +30,19 @@
   year = {2025},
   month = apr,
   contribution = {CO},
-  chemrxiv = {67f7b16c6dde43c9083e4f8f}  
+  chemrxiv = {67f7b16c6dde43c9083e4f8f},
+  abstract = {{Chemical imaging datasets, particularly those from techniques like X-ray powder diffraction (XRPD) imaging
+and tomography (XRD-CT), are challenging to analyse due to their high dimensionality, complexity, and spatial
+heterogeneity. BeamStop is a specialised software platform developed to address these challenges through an
+integrated, tab-based environment tailored to chemical imaging workflows. Created at Finden Ltd to meet the
+needs we routinely face in synchrotron-based experiments, BeamStop brings together our extensive experience in
+XRD-CT data processing and analysis. At its core is a powerful hyperspectral imaging explorer, enabling users to
+visually inspect chemical images and interactively examine spatially resolved spectra or diffraction patterns. The
+software also supports workflows such as unsupervised clustering, peak fitting, and mask creation. For full-profile
+structural refinement, it integrates the TOPAS engine to perform Rietveld analysis on individual patterns or across
+entire images. This paper presents an overview of BeamStop’s architecture and capabilities, illustrating how it
+facilitates reproducible, high-throughput interpretation of complex chemical imaging data.}},
+teaser = {teaser_beamstop.png}
 }
 
 @preprint{Ashley2023,
@@ -310,6 +338,23 @@ contribution = {AO}
 ######################################
 ##### inproceedings ##################
 ######################################
+
+@InProceedings{SSVM_2025,
+author={Papoutsellis, Evangelos and Kereta, Zeljko and Papafitsoros, Kostas},
+editor={Bubba, Tatiana A. and Gaburro, Romina and Gazzola, Silvia and Papafitsoros, Kostas and Pereyra, Marcelo and Sch{\"o}nlieb, Carola-Bibiane},
+title= {Why do we Regularise in Every Iteration for Imaging Inverse Problems?},
+booktitle={Scale Space and Variational Methods in Computer Vision},
+year={2025},
+publisher={Springer Nature Switzerland},
+address={Cham},
+pages={43--55},
+abstract={{Regularisation is a common method in iterative solutions for imaging inverse problems. The majority of algorithms evaluate the proximal operator of the regulariser in every iteration, leading to a significant computational overhead, as such evaluations can be costly. In this context, we investigate skipping the regulariser to reduce the frequency of proximal operator computations. This approach shows a reduction in computational time without compromising convergence or image quality. Here we study for the first time the efficacy of regularisation skipping on a variety of imaging inverse problems. We build upon the ProxSkip algorithm and we also propose a novel skip-version of the PDHG algorithm. Extensive numerical results highlight the potential of these methods to accelerate computations while maintaining high-quality reconstructions.}},
+isbn={978-3-031-92366-1},
+code = {https://github.com/epapoutsellis/Why-do-we-regularise-in-every-iteration},
+arxiv = {2411.00688},
+teaser = {teaser_ssvm_2025.png}
+}
+
 
 @inproceedings{Fully3D_2023,
   author = {Andreas Kofler and Fabian Altekr{\"u}ger and Fatima Antarou Ba and Christoph Kolbitsch and Evangelos Papoutsellis and David Schote and Clemens Sirotenko and Felix Frederik Zimmermann and Kostas Papafitsoros},
