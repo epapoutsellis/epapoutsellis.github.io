@@ -644,52 +644,50 @@ footer.sticky-bottom {
   text-decoration: underline;
 }
 .publications ol.bibliography li {
-  /* Collapse behavior */
+  /* --- Teaser: size-agnostic + no white bar when closed --- */
+  /* collapsed state: no border, no padding, no margin-collapse */
 }
-.publications ol.bibliography li .hidden {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.15s ease;
-  /* no padding/border when closed */
-  padding-block: 0;
-}
-.publications ol.bibliography li {
-  /* Expanded state */
-}
-.publications ol.bibliography li .hidden.open {
-  max-height: 100em;
-  padding-block: 8px; /* add vertical padding only when open */
-}
-.publications ol.bibliography li {
-  /* Teaser container: no border when closed */
-}
-.publications ol.bibliography li div.teaser.hidden {
-  border: 0; /* <-- prevents the thin white line */
-  padding-inline: 0; /* keep edges flush when closed */
+.publications ol.bibliography li div.teaser.hidden:not(.open) {
+  border: 0; /* prevents the thin white line */
+  padding: 0;
+  margin: 0;
   background: transparent;
+  overflow: hidden;
+  display: grid; /* stops child-margin collapsing creating a 1px gap */
 }
 .publications ol.bibliography li {
-  /* Show border only when open */
+  /* open state: show a normal border and some breathing room */
 }
 .publications ol.bibliography li div.teaser.hidden.open {
   border: 1px solid var(--global-text-color);
-  padding-inline: 8px; /* optional breathing room */
+  padding: 8px;
 }
 .publications ol.bibliography li {
-  /* (optional) if any <hr> sneaks in from content, hide it when closed */
+  /* responsive grid so any PNG/GIF just fits */
 }
-.publications ol.bibliography li div.teaser.hidden hr {
-  display: none;
+.publications ol.bibliography li div.teaser.hidden {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  align-items: center;
 }
 .publications ol.bibliography li {
-  /* Images remain responsive */
+  /* images scale to their cell, regardless of source dimensions */
 }
 .publications ol.bibliography li div.teaser.hidden img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: contain; /* no cropping of tall/wide images */
   display: block;
   background: transparent;
+  /* optional: cap extreme heights; remove if not needed */
+  max-height: 360px;
+}
+.publications ol.bibliography li {
+  /* if any <hr> exists inside teaser, hide it when collapsed */
+}
+.publications ol.bibliography li div.teaser.hidden:not(.open) hr {
+  display: none;
 }
 
 figure.highlight {
