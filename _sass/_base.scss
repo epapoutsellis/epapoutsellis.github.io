@@ -574,45 +574,46 @@ footer.sticky-bottom {
           }
         }
       }
-      /* Collapse behavior */
-      .hidden {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height .15s ease;
-        /* no padding/border when closed */
-        padding-block: 0;
-      }
+      /* --- Teaser: size-agnostic + no white bar when closed --- */
 
-      /* Expanded state */
-      .hidden.open {
-        max-height: 100em;
-        padding-block: 8px;   /* add vertical padding only when open */
-      }
-
-      /* Teaser container: no border when closed */
-      div.teaser.hidden {
-        border: 0;            /* <-- prevents the thin white line */
-        padding-inline: 0;    /* keep edges flush when closed */
+      /* collapsed state: no border, no padding, no margin-collapse */
+      div.teaser.hidden:not(.open) {
+        border: 0;             /* prevents the thin white line */
+        padding: 0;
+        margin: 0;
         background: transparent;
+        overflow: hidden;
+        display: grid;         /* stops child-margin collapsing creating a 1px gap */
       }
 
-      /* Show border only when open */
+      /* open state: show a normal border and some breathing room */
       div.teaser.hidden.open {
         border: 1px solid var(--global-text-color);
-        padding-inline: 8px;  /* optional breathing room */
+        padding: 8px;
       }
 
-      /* (optional) if any <hr> sneaks in from content, hide it when closed */
-      div.teaser.hidden hr { display: none; }
+      /* responsive grid so any PNG/GIF just fits */
+      div.teaser.hidden {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+        align-items: center;
+      }
 
-      /* Images remain responsive */
+      /* images scale to their cell, regardless of source dimensions */
       div.teaser.hidden img {
         width: 100%;
         height: auto;
-        object-fit: contain;
+        object-fit: contain;   /* no cropping of tall/wide images */
         display: block;
         background: transparent;
+        /* optional: cap extreme heights; remove if not needed */
+        max-height: 360px;
       }
+
+      /* if any <hr> exists inside teaser, hide it when collapsed */
+      div.teaser.hidden:not(.open) hr { display: none; }
+
           
     
       // .hidden.open {
