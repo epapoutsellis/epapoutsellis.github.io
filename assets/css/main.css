@@ -644,50 +644,54 @@ footer.sticky-bottom {
   text-decoration: underline;
 }
 .publications ol.bibliography li {
-  /* --- Teaser: size-agnostic + no white bar when closed --- */
-  /* collapsed state: no border, no padding, no margin-collapse */
+  /* --- Teaser: size-agnostic + closes cleanly --- */
+  /* Closed state: absolutely no visual space */
 }
 .publications ol.bibliography li div.teaser.hidden:not(.open) {
-  border: 0; /* prevents the thin white line */
-  padding: 0;
+  border: 0 !important;
+  padding: 0 !important;
   margin: 0;
+  gap: 0 !important; /* grid gaps can show as a line */
   background: transparent;
-  overflow: hidden;
-  display: grid; /* stops child-margin collapsing creating a 1px gap */
 }
 .publications ol.bibliography li {
-  /* open state: show a normal border and some breathing room */
+  /* Open state: show border (your color rule still applies) */
 }
 .publications ol.bibliography li div.teaser.hidden.open {
   border: 1px solid var(--global-text-color);
   padding: 8px;
+  gap: 10px; /* spacing only when open */
 }
 .publications ol.bibliography li {
-  /* responsive grid so any PNG/GIF just fits */
+  /* Teaser layout (works both open/closed) */
 }
 .publications ol.bibliography li div.teaser.hidden {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 10px;
   align-items: center;
+  overflow: hidden; /* ensure contents clip during collapse */
 }
 .publications ol.bibliography li {
-  /* images scale to their cell, regardless of source dimensions */
+  /* Images: size-agnostic */
 }
 .publications ol.bibliography li div.teaser.hidden img {
   width: 100%;
   height: auto;
-  object-fit: contain; /* no cropping of tall/wide images */
+  object-fit: contain; /* no cropping */
   display: block;
-  background: transparent;
-  /* optional: cap extreme heights; remove if not needed */
-  max-height: 360px;
+  max-height: 360px; /* optional; remove if not wanted */
 }
 .publications ol.bibliography li {
-  /* if any <hr> exists inside teaser, hide it when collapsed */
+  /* If any <hr> is inside, hide it when closed */
 }
 .publications ol.bibliography li div.teaser.hidden:not(.open) hr {
   display: none;
+}
+.publications ol.bibliography li {
+  /* Ensure the collapse animation actually runs on the wrapper */
+}
+.publications ol.bibliography li .hidden {
+  transition: max-height 0.15s ease;
 }
 
 figure.highlight {
