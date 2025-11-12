@@ -574,47 +574,41 @@ footer.sticky-bottom {
           }
         }
       }
-            /* --- Teaser: size-agnostic + closes cleanly --- */
+      /* --- collapse logic stays as you had it --- */
+      .hidden { max-height: 0; overflow: hidden; transition: max-height .15s ease; }
+      .hidden.open { max-height: 100em; }
 
-      /* Closed state: absolutely no visual space */
-      div.teaser.hidden:not(.open) {
-        border: 0 !important;
-        padding: 0 !important;
+      /* --- Teaser: closed = no layout/gaps; open = grid --- */
+      div.teaser.hidden {
+        /* closed state */
+        display: block;              /* not grid when closed */
+        border: 0;
+        padding: 0;
         margin: 0;
-        gap: 0 !important;        /* grid gaps can show as a line */
         background: transparent;
+        overflow: hidden;            /* ensure contents don’t peek */
       }
 
-      /* Open state: show border (your color rule still applies) */
       div.teaser.hidden.open {
+        /* open state */
         border: 1px solid var(--global-text-color);
         padding: 8px;
-        gap: 10px;                /* spacing only when open */
-      }
 
-      /* Teaser layout (works both open/closed) */
-      div.teaser.hidden {
-        display: grid;
+        display: grid;               /* grid only when open */
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
         align-items: center;
-        overflow: hidden;         /* ensure contents clip during collapse */
       }
 
-      /* Images: size-agnostic */
+      /* Images: size-agnostic, no cropping */
       div.teaser.hidden img {
         width: 100%;
         height: auto;
-        object-fit: contain;      /* no cropping */
+        object-fit: contain;
         display: block;
-        max-height: 360px;        /* optional; remove if not wanted */
+        /* optional: cap very tall images */
+        /* max-height: 360px; */
       }
-
-      /* If any <hr> is inside, hide it when closed */
-      div.teaser.hidden:not(.open) hr { display: none; }
-
-      /* Ensure the collapse animation actually runs on the wrapper */
-      .hidden { transition: max-height 0.15s ease; }
-
 
       // .hidden.open {
       //   max-height: 100em;
