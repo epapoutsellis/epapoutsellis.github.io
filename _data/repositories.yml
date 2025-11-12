@@ -5,8 +5,17 @@ open_source_repos:
   - name: CIL-Demos
     url: https://github.com/TomographicImaging/CIL-Demos
     description: A collection of jupyter notebooks, designed to introduce you to CIL.
+  - name: ndtomo
+    url: https://github.com/antonyvam/nDTomo/tree/master
+    description: nDTomo is a Python-based software suite for the simulation, visualization, pre-processing, reconstruction, and analysis of chemical imaging and X-ray tomography data, with a focus on hyperspectral datasets such as X-ray powder diffraction computed tomography or XRD-CT.
+  - name: BIL
+    url: https://github.com/antonyvam/BatteryImagingLibrary
+    description: BIL is the first multi-modal multi-length scale battery imaging database. <a href = "https://www.batteryimaginglibrary.com"></a>
 
-reproduce_papers:  
+reproduce_papers: 
+  - name: Why do we regularise in every iteration for imaging inverse problems
+    url: https://github.com/epapoutsellis/Why-do-we-regularise-in-every-iteration
+    description: Code to reproduce all the results presented in <a href="https://link.springer.com/chapter/10.1007/978-3-031-92366-1_4">Why do we regularise in every iteration for imaging inverse problems?</a>
   - name: Learning Regularization Parameter-Maps with NNs
     url: https://github.com/koflera/LearningRegularizationParameterMaps
     description: Code to reproduce all the results presented in <a href="https://arxiv.org/abs/2301.05888">Learning Regularization Parameter-Maps for Variational Image Reconstruction using Deep Neural Networks and Algorithm Unrolling</a>
@@ -40,18 +49,3 @@ other_projects:
     url: https://github.com/epapoutsellis/cil_work
     description: Various jupyter notebooks using CIL 
 
-
-
-# Default code
-# github_users:
-#   - torvalds
-#   - alshedivat
-
-# github_repos:
-#   - alshedivat/al-folio
-#   - twbs/bootstrap
-#   - jekyll/jekyll
-#   - jquery/jquery
-#   - FortAwesome/Font-Awesome
-#   - jpswalsh/academicons
-#   - mathjax/MathJax
