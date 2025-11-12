@@ -5,30 +5,17 @@
 ##### Preprints ######################
 ######################################
 
-
-@preprint{Jorgensen2023_HTC,
-author = {Jakob Sauer Jørgensen and Evangelos Papoutsellis and Laura Murgatroyd and Gemma Fardell and Edoardo Pasca},
-title = {A directional regularization method for the limited-angle Helsinki Tomography Challenge using the Core Imaging Library (CIL)},
-year = {2023},
-abstract = {This article presents the algorithms developed by the Core Imaging Library (CIL) developer
-team for the Helsinki Tomography Challenge 2022. The challenge focused on reconstructing 2D
-phantom shapes from limited-angle computed tomography (CT) data. The CIL team designed and
-implemented five reconstruction methods using CIL (https://ccpi.ac.uk/cil/), an open-source
-Python package for tomographic imaging. The CIL team adopted a model-based reconstruction
-strategy, unique to this challenge with all other teams relying on deep-learning techniques. The
-CIL algorithms showcased exceptional performance, with one algorithm securing the third place
-in the competition. The best-performing algorithm employed careful CT data pre-processing and
-an optimization problem with single-sided directional total variation regularization combined with
-isotropic total variation and tailored lower and upper bounds. The reconstructions and segmentations achieved high quality for data with angular ranges down to 50 degrees, and in some cases
-acceptable performance even at 40 and 30 degrees. This study highlights the effectiveness of modelbased approaches in limited-angle tomography and emphasizes the importance of proper algorithmic
-design leveraging on available prior knowledge to overcome data limitations. Finally, this study
-highlights the flexibility of CIL for prototyping and comparison of different optimization methods.},
-arxiv = {arXiv:2310.01671},
-code = {https://github.com/TomographicImaging/CIL-HTC2022-Algo2},
-teaser = {htc_cil_recons_datasets.png},
-contribution = {CO}
+@article{Dong2025,
+  title = {BeamStop: A software for analysing chemical imaging and tomography data},
+  url = {http://dx.doi.org/10.26434/chemrxiv-2025-m1v5v},
+  DOI = {10.26434/chemrxiv-2025-m1v5v},
+  publisher = {American Chemical Society (ACS)},
+  author = {Dong,  Hongyang and Jacques,  Simon D.M. and Papoutsellis,  Evangelos and Beale,  Andrew M. and Vamvakeros,  Antonis},
+  year = {2025},
+  month = apr,
+  contribution = {CO},
+  chemrxiv = {67f7b16c6dde43c9083e4f8f}  
 }
-
 
 @preprint{Ashley2023,
 author = {Ashley G Gillman and  Min Han Quah and Evangelos Papoutsellis and Kris Thielemans and Claire Delplancke
@@ -63,8 +50,6 @@ medrxiv = {10.1101/2023.04.23.23289004v1}
 }
 
 
-Jorgensen2023_HTC
-
 @article{Jorgensen2023_HTC,
 title = {A directional regularization method for the limited-angle Helsinki Tomography Challenge using the Core Imaging Library (CIL)},
 journal = {Applied Mathematics for Modern Challenges},
@@ -83,10 +68,6 @@ code = {https://github.com/TomographicImaging/CIL-HTC2022-Algo2},
 teaser = {htc_cil_recons_datasets.png}
 }
 
-
-
-
-
 @preprint{Bergounioux_2018,
   title = {{Infimal convolution spatiotemporal PET reconstruction using total variation based priors}},
   author = {Bergounioux, Ma{\"i}tine and Papoutsellis, Evangelos and Stute, Simon and Tauber, Clovis},
@@ -102,6 +83,27 @@ teaser = {htc_cil_recons_datasets.png}
 ##### Journals ######################
 ######################################
 
+@article{Vamvakeros2025,
+  title = {nDTomo: a modular Python toolkit for X-ray chemical imaging and tomography},
+  volume = {4},
+  ISSN = {2635-098X},
+  url = {http://dx.doi.org/10.1039/d5dd00252d},
+  DOI = {10.1039/d5dd00252d},
+  number = {9},
+  journal = {Digital Discovery},
+  publisher = {Royal Society of Chemistry (RSC)},
+  author = {Vamvakeros,  A. and Papoutsellis,  E. and Dong,  H. and Docherty,  R. and Beale,  A. M. and Cooper,  S. J. and Jacques,  S. D. M.},
+  year = {2025},
+  pages = {2579–2592},
+  abstract = {{nDTomo is a Python-based software suite for the simulation, reconstruction and analysis of X-ray chemical imaging and computed tomography data. 
+  It provides a collection of Python function-based tools designed for accessibility and education as well as a graphical user interface. 
+  Prioritising transparency and ease of learning, nDTomo adopts a function-centric design that facilitates straightforward understanding and extension of core workflows, from phantom generation and pencil-beam tomography simulation to sinogram correction, tomographic reconstruction and peak fitting. 
+  While many scientific toolkits embrace object-oriented design for modularity and scalability, nDTomo instead emphasises pedagogical clarity, making it especially suitable for students and researchers entering the chemical imaging and tomography field. 
+  The suite also includes modern deep learning tools, such as a self-supervised neural network for peak analysis (PeakFitCNN) and a GPU-based direct least squares reconstruction (DLSR) approach for simultaneous tomographic reconstruction and parameter estimation.
+  Rather than aiming to replace established tomography frameworks, nDTomo serves as an open, function-oriented environment for training, prototyping, and research in chemical imaging and tomography.}},
+  contribution = {CO},
+  teaser = {teaser_ndtomo.png}
+}
 
 
 @article{2301.05888,
@@ -308,6 +310,27 @@ contribution = {AO}
 ######################################
 ##### inproceedings ##################
 ######################################
+
+@InProceedings{SSVM_2025,
+author="Papoutsellis, Evangelos
+and Kereta, Zeljko
+and Papafitsoros, Kostas",
+editor="Bubba, Tatiana A.
+and Gaburro, Romina
+and Gazzola, Silvia
+and Papafitsoros, Kostas
+and Pereyra, Marcelo
+and Sch{\"o}nlieb, Carola-Bibiane",
+title="Why do we Regularise in Every Iteration for Imaging Inverse Problems?",
+booktitle="Scale Space and Variational Methods in Computer Vision",
+year="2025",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="43--55",
+abstract="Regularisation is a common method in iterative solutions for imaging inverse problems. The majority of algorithms evaluate the proximal operator of the regulariser in every iteration, leading to a significant computational overhead, as such evaluations can be costly. In this context, we investigate skipping the regulariser to reduce the frequency of proximal operator computations. This approach shows a reduction in computational time without compromising convergence or image quality. Here we study for the first time the efficacy of regularisation skipping on a variety of imaging inverse problems. We build upon the ProxSkip algorithm and we also propose a novel skip-version of the PDHG algorithm. Extensive numerical results highlight the potential of these methods to accelerate computations while maintaining high-quality reconstructions.",
+isbn="978-3-031-92366-1"
+}
+
 
 @inproceedings{Fully3D_2023,
   author = {Andreas Kofler and Fabian Altekr{\"u}ger and Fatima Antarou Ba and Christoph Kolbitsch and Evangelos Papoutsellis and David Schote and Clemens Sirotenko and Felix Frederik Zimmermann and Kostas Papafitsoros},

@@ -151,6 +151,8 @@
           {%- endif %}
           {%- if entry.medrxiv %}
             <a href="https://www.medrxiv.org/content/{{ entry.medrxiv }}" class="btn btn-sm z-depth-0" role="button">medrxiv</a>
+          {%- if entry.chemrxiv %}
+            <a href="https://chemrxiv.org/engage/chemrxiv/article-details/{{ entry.chemrxiv }}" class="btn btn-sm z-depth-0" role="button">chemrxiv</a>            
           {%- endif %}          
           {%- if entry.bibtex_show %}
             <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
