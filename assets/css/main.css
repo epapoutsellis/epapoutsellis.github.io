@@ -644,86 +644,46 @@ footer.sticky-bottom {
   text-decoration: underline;
 }
 .publications ol.bibliography li .hidden {
-  font-size: 0.875rem;
-  max-height: 0px;
+  max-height: 0;
   overflow: hidden;
-  text-align: justify;
-  transition-property: 0.15s ease;
-  -moz-transition: 0.15s ease;
-  -ms-transition: 0.15s ease;
-  -o-transition: 0.15s ease;
-  transition: all 0.15s ease;
-}
-.publications ol.bibliography li .hidden p {
-  line-height: 1.4em;
-  margin: 10px;
-}
-.publications ol.bibliography li .hidden pre {
-  font-size: 1em;
-  line-height: 1.4em;
-  padding: 10px;
-}
-.publications ol.bibliography li .hidden {
-  font-size: 0.875rem;
-  max-height: 0; /* no 'px' needed */
-  overflow: hidden;
-  text-align: justify;
-  transition: max-height 0.15s ease; /* was using transition-property incorrectly */
-  will-change: max-height;
-}
-.publications ol.bibliography li .hidden p {
-  line-height: 1.4;
-  margin: 10px;
-}
-.publications ol.bibliography li .hidden pre {
-  font-size: 1em;
-  line-height: 1.4;
-  padding: 10px;
+  transition: max-height 0.15s ease;
+  /* no padding/border when closed */
+  padding-block: 0;
 }
 .publications ol.bibliography li .hidden.open {
-  max-height: 100em; /* expand height; transition already defined above */
+  max-height: 100em;
+  padding-block: 8px; /* add vertical padding only when open */
 }
 .publications ol.bibliography li {
-  /* Respect reduced motion */
-}
-@media (prefers-reduced-motion: reduce) {
-  .publications ol.bibliography li .hidden {
-    transition: none;
-  }
-}
-.publications ol.bibliography li {
-  /* Abstract borders */
-}
-.publications ol.bibliography li div.abstract.hidden {
-  border: 1px dashed var(--global-bg-color);
-}
-.publications ol.bibliography li div.abstract.hidden.open {
-  border-color: var(--global-text-color);
-}
-.publications ol.bibliography li {
-  /* Teaser: valid border + responsive grid so PNG/GIFs fit regardless of size */
+  /* Teaser container: no border when closed */
 }
 .publications ol.bibliography li div.teaser.hidden {
-  border: 1px solid var(--global-bg-color); /* was invalid before */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 10px;
-  align-items: center;
-  padding: 8px; /* optional breathing room */
-}
-.publications ol.bibliography li div.teaser.hidden.open {
-  border-color: var(--global-text-color);
+  border: 0; /* <-- prevents the thin white line */
+  padding-inline: 0; /* keep edges flush when closed */
+  background: transparent;
 }
 .publications ol.bibliography li {
-  /* Teaser images: scale to cell, keep aspect ratio */
+  /* Show border only when open */
+}
+.publications ol.bibliography li div.teaser.hidden.open {
+  border: 1px solid var(--global-text-color);
+  padding-inline: 8px; /* optional breathing room */
+}
+.publications ol.bibliography li {
+  /* (optional) if any <hr> sneaks in from content, hide it when closed */
+}
+.publications ol.bibliography li div.teaser.hidden hr {
+  display: none;
+}
+.publications ol.bibliography li {
+  /* Images remain responsive */
 }
 .publications ol.bibliography li div.teaser.hidden img {
   width: 100%;
   height: auto;
-  object-fit: contain; /* prevents cropping of tall/wide PNGs */
+  object-fit: contain;
   display: block;
-  /* optional cap so one very tall image doesn't dominate */
-  max-height: 360px;
+  background: transparent;
 }
 
 figure.highlight {
