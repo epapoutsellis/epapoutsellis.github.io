@@ -643,12 +643,18 @@ footer.sticky-bottom {
 .publications ol.bibliography li .badges span:hover {
   text-decoration: underline;
 }
+.publications ol.bibliography li {
+  /* Collapse behavior */
+}
 .publications ol.bibliography li .hidden {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.15s ease;
   /* no padding/border when closed */
   padding-block: 0;
+}
+.publications ol.bibliography li {
+  /* Expanded state */
 }
 .publications ol.bibliography li .hidden.open {
   max-height: 100em;
