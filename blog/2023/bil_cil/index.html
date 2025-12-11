@@ -10,10 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>2022_11_helsinki_challenge | Evangelos  Papoutsellis</title>
+    <title>When BIL met CIL | Evangelos  Papoutsellis</title>
     <meta name="author" content="Evangelos  Papoutsellis">
-    <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+    <meta name="description" content="BIL and CIL">
 
 
     <!-- Bootstrap & MDB -->
@@ -28,6 +27,9 @@
     <!-- Code Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
+    
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
         
 
     <!-- Styles -->
@@ -35,7 +37,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%8F%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="epapoutsellis/news/2022_11_helsinki_challenge/">
+    <link rel="canonical" href="epapoutsellis/blog/2023/bil_cil/">
     
     <!-- Dark Mode -->
     
@@ -75,8 +77,8 @@
               <!-- Comment blog section -->
               
               <!-- Blog -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/blog/">blog</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
               </li>
 
               <!-- Other pages -->
@@ -117,15 +119,27 @@
     <!-- Content -->
     <div class="container mt-5">
       
-        <!-- _layouts/post.html -->
+        
+        <div class="row">
+          <!-- sidebar, which will move to the top on a small screen -->
+          <div class="col-sm-3">
+            <nav id="toc-sidebar" class="sticky-top"></nav>
+          </div>
+          <!-- main content area -->
+          <div class="col-sm-9">
+            <!-- _layouts/post.html -->
 
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">2022_11_helsinki_challenge</h1>
-    <p class="post-meta">November 1, 2022</p>
+    <h1 class="post-title">When BIL met CIL</h1>
+    <p class="post-meta">June 6, 2023</p>
     <p class="post-tags">
-      <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/category/cil">
+          <i class="fas fa-tag fa-sm"></i> CIL</a>  
+          
 
     </p>
   </header>
@@ -133,13 +147,124 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p>CIL came 3rd <img class="emoji" title=":trophy:" alt=":trophy:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c6.png" height="20" width="20"> at the <a href="https://www.fips.fi/HTCresults.php#anchor1" rel="external nofollow noopener" target="_blank">Helsinki Tomography Challenge</a>, organised by the <a href="https://www.fips.fi/" rel="external nofollow noopener" target="_blank">Finnish Inverse Problems Society</a>.</p>
+      <h3 id="when-bil-met-cil">When BIL met CIL</h3>
+
+<p><img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_0.png" width="720"></p>
+
+<p>First some introductions.</p>
+
+<p>The <a href="https://www.batteryimaginglibrary.com/" rel="external nofollow noopener" target="_blank">Battery Imaging Library</a> aka BIL is a growing open, curated collection of multi-modal, multi-length scale battery imaging datasets – from lab and synchrotron X-ray CT to neutron CT and electron microscopy – all wrapped in a FAIR-compliant, searchable platform.</p>
+
+<p>The <a href="https://github.com/TomographicImaging/CIL" rel="external nofollow noopener" target="_blank">Core Imaging Library</a>, aka CIL is an open-source Python framework for inverse problems, in particular tomographic imaging and mathematical optimisation.</p>
+
+<p>So far so good: one project gives us rich, real-world battery data; the other gives us powerful tools to do something meaningful with it.</p>
+
+<p>All we have to do now is to find a nice way to talk to each other.</p>
+
+<h3 id="our-admitted-inverse-crime">Our Admitted Inverse Crime</h3>
+
+<p>With today’s tools, it’s almost effortless to:</p>
+
+<ul>
+  <li>find a tomography-related image, e.g., a Shepp–Logan phantom</li>
+  <li>define an acquisition geometry, i.e., a sinogram space with specific detector points and angles</li>
+  <li>define the forward operator (Radon transform) and generate the corresponding sinogram</li>
+  <li>apply some noise to the sinogram</li>
+  <li>and test your favourite analytic and iterative reconstructions algorithms.</li>
+</ul>
+
+<p>However, this is a textbook example of an inverse crime: we generate synthetic data with essentially the same forward model, assumptions, and discretization that we later use for reconstruction. The geometry is exact, the physics is idealised, the noise is usually “nice” and the only real difficulty left is then numerical optimisation. Certainly, this approach is useful and even necessary for early-stage development: it validates that the code runs and that the algorithm behaves as expected under ideal conditions.</p>
+
+<p>But let’s be honest: this is still a long way from real applications. Real experiments aren’t neat phantoms; they involve long scans, mechanical drift, misalignments, imperfect flat- and dark-field corrections, low SNR, beam instabilities, and datasets on the order of tens or even hundreds of gigabytes. If we want our methods to matter in practice, we have to step out of the Shepp–Logan comfort zone.</p>
+
+<h3 id="enter-bil">Enter BIL</h3>
+
+<p>That’s where BIL comes in. Instead of toy problems, we get about 3.4 TB of multi-modal, multi-length scale data, with real noise and artefacts. This is perfect for testing reconstruction algorithms and pipelines on something much closer to reality.</p>
+
+<p>But there’s a catch. Those datasets don’t arrive as a nice clean NumPy array with one-line “load me” function. They come from different scanners, beamlines and instruments, each with its own way of storing projections, darks and flats, rotation angles, geometry and experiment metadata.</p>
+
+<p>To really make use of BIL inside CIL, we need to read and interpret this metadata correctly. That’s where DataReaders come in.</p>
+
+<h3 id="cil-ct-data-reader-hackathon">CIL CT Data Reader Hackathon</h3>
+
+<p>Recently I participated in a <a href="https://ccpi.ac.uk/events/cil-ct-data-reader-hackathon/" rel="external nofollow noopener" target="_blank">hackathon</a> focused on one simple task: to implement and improve <strong>CT DataReaders</strong> for different scanners and data formats, and to hook them up cleanly inside CIL. This event was organised by the <a href="https://ccpi.ac.uk/" rel="external nofollow noopener" target="_blank">Collaborative Computational Project in Tomographic Imaging</a>.</p>
+
+<p>The goal was to implement CIL <code class="language-plaintext highlighter-rouge">DataReader</code> classes that:</p>
+
+<ul>
+  <li>read the raw projection data and the associated metadata,</li>
+  <li>set up the correct acquisition geometry, and</li>
+  <li>perform an analytic reconstruction (FBP/FDK) that can be directly compared to the vendor’s own reconstruction.</li>
+</ul>
+
+<p>During the hackathon, <a href="https://www.linkedin.com/in/kubra-kumrular-60b063100/" rel="external nofollow noopener" target="_blank">Dr. Kubra Kumrular</a> and I worked on the <strong>Diondo D5</strong> data reader. We tested our implementation on a AAA NMC532 Li-ion battery data which are available from BIL. Data were acquired at <a href="https://muvis.org/" rel="external nofollow noopener" target="_blank">MuVIS X-ray Imaging Centre at the University of Southampton</a> using a Diondo D5 X-ray CT instrument.</p>
+<ul>
+  <li>Raw Data: https://zenodo.org/records/17167576</li>
+  <li>Vendor Reconstruction: https://zenodo.org/records/17167562</li>
+</ul>
+
+<p><img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_2.png" width="720">
+<img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_3.png" width="720"></p>
+
+<p>Our submitted jupyter notebook can be found <a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/004_DiondoReader.ipynb" rel="external nofollow noopener" target="_blank">CIL-Reader-Showcase
+-Diondo</a>. As we observe above the CIL reconstruction is very similar to the reconstruction obtained by the vendor. Below is the 3D battery sliced through the middle.</p>
+
+<p><img src="/assets/img/blogs/BIL_CIL/battery_spin.gif" alt="Rotating battery volume"></p>
+
+<p>Other participants developed readers for additional data formats, including</p>
+<ul>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/001_NikonReader_XCT_Metal_Object.ipynb" rel="external nofollow noopener" target="_blank">NikonReader</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/002_ZeissReader_Tomato_seed.ipynb" rel="external nofollow noopener" target="_blank">ZeissReader</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/003_HDF5Reader_Parallel_and_Fanbeam.ipynb" rel="external nofollow noopener" target="_blank">HDF5</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/005_WaygateReader_Plug.ipynb" rel="external nofollow noopener" target="_blank">WaygateReader</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/006_TescanDataReader_ClosedPoreObject.ipynb" rel="external nofollow noopener" target="_blank">TescanReader</a></li>
+</ul>
+
+<p>Because BIL already hosts some datasets produced by these acquisition systems, these readers can also be used directly in CIL to load and explore the corresponding data.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p><img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_4.png" width="720"></p>
+
+<p>Having these DataReader classes in place is crucial: without them you end up digging through metafiles, guessing inputs, and rewriting the same loading scripts over and over. With them, you can skip the low-level file-format hassle and spend your time where you actually want to be – testing and developing iterative reconstruction algorithms on real experimental data, for example.</p>
+
+<p>These readers are planned to be merged into the CIL master branch and maintained as part of the project, so they will stay aligned with future developments. In the meantime, we’d love for you to try them out on your own data and let us know what you think, what works well, and what could be improved.</p>
 
 
     </div>
-  </article>
+  </article><div id="giscus_thread" style="max-width: 1000px; margin: 0 auto;">
+  <script>
+    let giscusTheme = localStorage.getItem("theme");
+    let giscusAttributes = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "epapoutsellis/epapoutsellis.github.io",
+        "data-repo-id": "R_kgDOJW1Jbg",
+        "data-category": "General",
+        "data-category-id": "DIC_kwDOJW1Jbs4CWtpm",
+        "data-mapping": "pathname",
+        "data-strict": "0",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "1",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        "crossorigin": "anonymous",
+        "async": "",
+    };
+
+
+    let giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById("giscus_thread").appendChild(giscusScript);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a>
+</noscript>
+</div>
 </div>
 
+          </div>
+        </div>
+        
       
     </div>
 
@@ -165,6 +290,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Load Common JS -->
   <script defer src="/assets/js/common.js"></script>
