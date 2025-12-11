@@ -1,5 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="epapoutsellis/feed.xml" rel="self" type="application/atom+xml" /><link href="epapoutsellis/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-11T11:45:05+00:00</updated><id>epapoutsellis/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">CIL on the Cloud</title><link href="epapoutsellis/blog/2023/cil-colab/" rel="alternate" type="text/html" title="CIL on the Cloud" /><published>2023-06-06T15:59:00+00:00</published><updated>2023-06-06T15:59:00+00:00</updated><id>epapoutsellis/blog/2023/cil-colab</id><content type="html" xml:base="epapoutsellis/blog/2023/cil-colab/"><![CDATA[<p>In this blog, we will demonstrate how to use the Core Imaging Library (CIL), an open source software for imaging inverse problems, on cloud platforms like Binder and Google Colab. These platforms offer cloud-based environments with pre-installed packages and resources, making them highly suitable for teaching and training purposes. In addition, if you do not have a GPU or you are a macOS user without GPU or without the right GPU these cloud platforms serve as an excellent alternative. Or maybe you lost connection to your Windows/Linux remote machines and you really want to reconstruct a tomographic dataset.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="epapoutsellis/feed.xml" rel="self" type="application/atom+xml" /><link href="epapoutsellis/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-12-11T11:47:44+00:00</updated><id>epapoutsellis/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">When BIL met CIL</title><link href="epapoutsellis/blog/2025/bil_cil/" rel="alternate" type="text/html" title="When BIL met CIL" /><published>2025-10-12T15:59:00+00:00</published><updated>2025-10-12T15:59:00+00:00</updated><id>epapoutsellis/blog/2025/bil_cil</id><content type="html" xml:base="epapoutsellis/blog/2025/bil_cil/"><![CDATA[<h3 id="when-bil-met-cil">When BIL met CIL</h3>
+
+<p><img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_0.png" width="720" /></p>
+
+<p>First some introductions.</p>
+
+<p>The <a href="https://www.batteryimaginglibrary.com/">Battery Imaging Library</a> aka BIL is a growing open, curated collection of multi-modal, multi-length scale battery imaging datasets – from lab and synchrotron X-ray CT to neutron CT and electron microscopy – all wrapped in a FAIR-compliant, searchable platform.</p>
+
+<p>The <a href="https://github.com/TomographicImaging/CIL">Core Imaging Library</a>, aka CIL is an open-source Python framework for inverse problems, in particular tomographic imaging and mathematical optimisation.</p>
+
+<p>So far so good: one project gives us rich, real-world battery data; the other gives us powerful tools to do something meaningful with it.</p>
+
+<p>All we have to do now is to find a nice way to talk to each other.</p>
+
+<h3 id="our-admitted-inverse-crime">Our Admitted Inverse Crime</h3>
+
+<p>With today’s tools, it’s almost effortless to:</p>
+
+<ul>
+  <li>find a tomography-related image, e.g., a Shepp–Logan phantom</li>
+  <li>define an acquisition geometry, i.e., a sinogram space with specific detector points and angles</li>
+  <li>define the forward operator (Radon transform) and generate the corresponding sinogram</li>
+  <li>apply some noise to the sinogram</li>
+  <li>and test your favourite analytic and iterative reconstructions algorithms.</li>
+</ul>
+
+<p>However, this is a textbook example of an inverse crime: we generate synthetic data with essentially the same forward model, assumptions, and discretization that we later use for reconstruction. The geometry is exact, the physics is idealised, the noise is usually “nice” and the only real difficulty left is then numerical optimisation. Certainly, this approach is useful and even necessary for early-stage development: it validates that the code runs and that the algorithm behaves as expected under ideal conditions.</p>
+
+<p>But let’s be honest: this is still a long way from real applications. Real experiments aren’t neat phantoms; they involve long scans, mechanical drift, misalignments, imperfect flat- and dark-field corrections, low SNR, beam instabilities, and datasets on the order of tens or even hundreds of gigabytes. If we want our methods to matter in practice, we have to step out of the Shepp–Logan comfort zone.</p>
+
+<h3 id="enter-bil">Enter BIL</h3>
+
+<p>That’s where BIL comes in. Instead of toy problems, we get about 3.4 TB of multi-modal, multi-length scale data, with real noise and artefacts. This is perfect for testing reconstruction algorithms and pipelines on something much closer to reality.</p>
+
+<p>But there’s a catch. Those datasets don’t arrive as a nice clean NumPy array with one-line “load me” function. They come from different scanners, beamlines and instruments, each with its own way of storing projections, darks and flats, rotation angles, geometry and experiment metadata.</p>
+
+<p>To really make use of BIL inside CIL, we need to read and interpret this metadata correctly. That’s where DataReaders come in.</p>
+
+<h3 id="cil-ct-data-reader-hackathon">CIL CT Data Reader Hackathon</h3>
+
+<p>Recently I participated in a <a href="https://ccpi.ac.uk/events/cil-ct-data-reader-hackathon/">hackathon</a> focused on one simple task: to implement and improve <strong>CT DataReaders</strong> for different scanners and data formats, and to hook them up cleanly inside CIL. This event was organised by the <a href="https://ccpi.ac.uk/">Collaborative Computational Project in Tomographic Imaging</a>.</p>
+
+<p>The goal was to implement CIL <code class="language-plaintext highlighter-rouge">DataReader</code> classes that:</p>
+
+<ul>
+  <li>read the raw projection data and the associated metadata,</li>
+  <li>set up the correct acquisition geometry, and</li>
+  <li>perform an analytic reconstruction (FBP/FDK) that can be directly compared to the vendor’s own reconstruction.</li>
+</ul>
+
+<p>During the hackathon, <a href="https://www.linkedin.com/in/kubra-kumrular-60b063100/">Dr. Kubra Kumrular</a> and I worked on the <strong>Diondo D5</strong> data reader. We tested our implementation on a AAA NMC532 Li-ion battery data which are available from BIL. Data were acquired at <a href="https://muvis.org/">MuVIS X-ray Imaging Centre at the University of Southampton</a> using a Diondo D5 X-ray CT instrument.</p>
+<ul>
+  <li>Raw Data: https://zenodo.org/records/17167576</li>
+  <li>Vendor Reconstruction: https://zenodo.org/records/17167562</li>
+</ul>
+
+<p><img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_2.png" width="720" />
+<img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_3.png" width="720" /></p>
+
+<p>Our submitted jupyter notebook can be found <a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/004_DiondoReader.ipynb">CIL-Reader-Showcase
+-Diondo</a>. As we observe above the CIL reconstruction is very similar to the reconstruction obtained by the vendor. Below is the 3D battery sliced through the middle.</p>
+
+<!-- ![Rotating battery volume](/assets/img/blogs/BIL_CIL/battery_spin.gif) -->
+
+<p align="center">
+  <img src="/assets/img/blogs/BIL_CIL/battery_spin.gif" alt="Rotating, volume-rendered 3D battery sliced through the middle" style="max-width: 350px; width: 100%; height: auto;" />
+</p>
+
+<p>Other participants developed readers for additional data formats, including</p>
+<ul>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/001_NikonReader_XCT_Metal_Object.ipynb">NikonReader</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/002_ZeissReader_Tomato_seed.ipynb">ZeissReader</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/003_HDF5Reader_Parallel_and_Fanbeam.ipynb">HDF5</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/005_WaygateReader_Plug.ipynb">WaygateReader</a></li>
+  <li><a href="https://github.com/TomographicImaging/CIL-Reader-Showcase/blob/main/006_TescanDataReader_ClosedPoreObject.ipynb">TescanReader</a></li>
+</ul>
+
+<p>Because BIL already hosts some datasets produced by these acquisition systems, these readers can also be used directly in CIL to load and explore the corresponding data.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p><img src="/assets/img/blogs/BIL_CIL/WhenBILCIL_4.png" width="720" /></p>
+
+<p>Having these DataReader classes in place is crucial: without them you end up digging through metafiles, guessing inputs, and rewriting the same loading scripts over and over. With them, you can skip the low-level file-format hassle and spend your time where you actually want to be – testing and developing iterative reconstruction algorithms on real experimental data, for example.</p>
+
+<p>These readers are planned to be merged into the CIL master branch and maintained as part of the project, so they will stay aligned with future developments. In the meantime, we’d love for you to try them out on your own data and let us know what you think, what works well, and what could be improved.</p>]]></content><author><name></name></author><category term="CIL" /><summary type="html"><![CDATA[BIL and CIL]]></summary></entry><entry><title type="html">CIL on the Cloud</title><link href="epapoutsellis/blog/2023/cil-colab/" rel="alternate" type="text/html" title="CIL on the Cloud" /><published>2023-06-06T15:59:00+00:00</published><updated>2023-06-06T15:59:00+00:00</updated><id>epapoutsellis/blog/2023/cil-colab</id><content type="html" xml:base="epapoutsellis/blog/2023/cil-colab/"><![CDATA[<p>In this blog, we will demonstrate how to use the Core Imaging Library (CIL), an open source software for imaging inverse problems, on cloud platforms like Binder and Google Colab. These platforms offer cloud-based environments with pre-installed packages and resources, making them highly suitable for teaching and training purposes. In addition, if you do not have a GPU or you are a macOS user without GPU or without the right GPU these cloud platforms serve as an excellent alternative. Or maybe you lost connection to your Windows/Linux remote machines and you really want to reconstruct a tomographic dataset.</p>
 
 <h2 id="outline">Outline</h2>
 <ul>
