@@ -10,7 +10,7 @@ open_source_repos:
     description: nDTomo is a Python-based software suite for the simulation, visualization, pre-processing, reconstruction, and analysis of chemical imaging and X-ray tomography data.
   - name: BIL
     url: https://github.com/antonyvam/BatteryImagingLibrary
-    description: BIL is the first multi-modal multi-length scale battery imaging database. <a href="https://www.batteryimaginglibrary.com">https://www.batteryimaginglibrary.com</a>'
+    description: BIL is the first multi-modal multi-length scale battery imaging database. <a href="https://www.batteryimaginglibrary.com">https://www.batteryimaginglibrary.com</a>
 
 reproduce_papers: 
   - name: Why do we regularise in every iteration for imaging inverse problems
