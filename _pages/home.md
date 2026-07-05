@@ -9,10 +9,10 @@ profile:
   image: profile_picture.png
   image_circular: true # crops the image to make it circular
   address: 
-    <p> Rutherford Appleton Laboratory <br>
-    Building R71, Office 1.12-13 <br>
-    Harwell Campus, Didcot OX11 0QX<br>
-    </p>
+    # <p> Rutherford Appleton Laboratory <br>
+    # Building R71, Office 1.12-13 <br>
+    # Harwell Campus, Didcot OX11 0QX<br>
+    # </p>
   
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
