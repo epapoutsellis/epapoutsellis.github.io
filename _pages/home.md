@@ -21,13 +21,13 @@ social: true  # includes social icons at the bottom of the page
 
 <p style="text-align: center;">:wave::wave::wave: Welcome to my website :wave::wave::wave:</p> 
 
-👋 Hello — I am Evangelos Papoutsellis — or Vaggelis — working at the intersection of applied mathematics, inverse problems, optimisation, tomography, machine learning, and open-source scientific software.
+I am Evangelos Papoutsellis (or Vaggelis) working at the intersection of applied mathematics, inverse problems, optimisation, tomography, machine learning, and open-source scientific software.
 
-:mag: **Research**  — My work focuses on developing mathematical models and scalable algorithms for recovering hidden information from indirect, noisy, and high-dimensional data. I apply these ideas to imaging and reconstruction problems in medical imaging, materials science, tomography, and chemical imaging.
+:mag: **Research:** My work focuses on developing mathematical models and scalable algorithms for recovering hidden information from indirect, noisy, and high-dimensional data. I apply these ideas to imaging and reconstruction problems in medical imaging, materials science, tomography, and chemical imaging.
 
-:toolbox: **Open-source software** — I develop open-source research software that turns mathematical methods into practical, reproducible computational tools. This includes work on the [Core Imaging Library (CIL)](https://github.com/TomographicImaging/CIL), [nDTomo](https://github.com/antonyvam/nDTomo), and the [Synergistic Image Reconstruction Framework (SIRF)](https://github.com/SyneRBI/SIRF), supporting optimisation, reconstruction, simulation, and analysis workflows for imaging and inverse problems.
+:toolbox: **Open-source software:** I develop open-source research software that turns mathematical methods into practical, reproducible computational tools. This includes work on the [Core Imaging Library (CIL)](https://github.com/TomographicImaging/CIL), [nDTomo](https://github.com/antonyvam/nDTomo), and the [Synergistic Image Reconstruction Framework (SIRF)](https://github.com/SyneRBI/SIRF), supporting optimisation, reconstruction, simulation, and analysis workflows for imaging and inverse problems.
 
-:rocket: **Opportunities** — I am currently open to new opportunities in computational imaging, scientific computing, applied mathematics, machine learning for imaging, and research software engineering, across academia, research institutes, and industry. I am especially interested in roles involving mathematical modelling, large-scale optimisation, algorithm development, tomographic reconstruction, and open-source scientific software.
+:rocket: **Opportunities:** I am currently open to new opportunities in computational imaging, scientific computing, applied mathematics, machine learning for imaging, and research software engineering, across academia, research institutes, and industry. I am especially interested in roles involving mathematical modelling, large-scale optimisation, algorithm development, tomographic reconstruction, and open-source scientific software.
 
 <!-- I am a Senior Research Scientist at [Finden Ltd](https://www.finden.co.uk/) and a Visitor Research Associate in the [Department of Mathematics, University of Manchester](https://www.maths.manchester.ac.uk/). I am also one of the main developers of the [Core Imaging Library (CIL)](https://github.com/TomographicImaging/CIL) for [Collaborative Computaional Project for Tomographic Imaging (CCPi)](https://ccpi.ac.uk/).
 
