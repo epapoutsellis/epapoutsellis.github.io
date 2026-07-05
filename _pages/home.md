@@ -2,7 +2,7 @@
 layout: about_epaps
 title: home
 permalink: /
-subtitle: Senior Research Scientist at <a href='https://www.finden.co.uk/'>Finden Ltd</a>
+subtitle: Senior Research Scientist 
 
 profile:
   align: right
