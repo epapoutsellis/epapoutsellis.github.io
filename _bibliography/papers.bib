@@ -5,12 +5,27 @@
 ##### Preprints ######################
 ######################################
 
+@preprint{2602.09527,
+Author = {Evangelos Papoutsellis and Zeljko Kereta and Kostas Papafitsoros},
+Title = {Split, Skip and Play: Variance-Reduced ProxSkip for Tomography Reconstruction is Extremely Fast},
+Year = {2026},
+abstract = {{Many modern iterative solvers for large-scale tomographic reconstruction incur two major computational costs per iteration: expensive forward/adjoint projections to update the
+data fidelity term and costly proximal computations for the regulariser, often done via inner iterations. This paper studies for the first time the application of methods that couple
+randomised skipping of the proximal with variance-reduced subset-based optimisation of data-fit term, to simultaneously
+reduce both costs in challenging tomographic reconstruction tasks. We provide a series of experiments using both synthetic and real data, demonstrating striking speed-ups of the
+order 5x-20x compared to the non-skipped counterparts which have been so far the standard approach for efficiently
+solving these problems. Our work lays the groundwork for broader adoption of these methods in inverse problems.}},
+contribution = {CO},
+teaser = {teaser_ssp.png},
+code = {https://github.com/epapoutsellis/Split-Skip-and-Play}
+}
+
 @preprint{Docherty2025,
   title = {Battery Imaging Library: Multi-length scale and multi-modal synchrotron and laboratory battery imaging data for all},
   url = {http://dx.doi.org/10.26434/chemrxiv-2025-sbp73},
   DOI = {10.26434/chemrxiv-2025-sbp73},
   publisher = {American Chemical Society (ACS)},
-  author = {Docherty,  Ronan and Riley,  Sam and Morley,  John D. and Papoutsellis,  Evangelos and Bobitan,  Antonia Diana and et al},
+  author = {Docherty,  Ronan and Riley,  Sam and Morley,  John D. and Papoutsellis,  Evangelos and Bobitan,  Antonia Diana and al},
   year = {2025},
   month = sep,
   abstract = {{Battery research increasingly relies on advanced imaging, yet open access to such data remains rare, scattered across various sources, and difficult to find. The Battery Imaging Library (BIL) is the first open, curated collection of multi-modal and multi-length scale battery imaging datasets, accompanied by a searchable, FAIR-compliant website. Distinctive features include the release of raw experimental data (radiographs, sinograms, X-ray and electron diffraction patterns) together with rare operando and multi-resolution datasets. Each dataset is linked to Zenodo DOIs with metadata, ensuring persistence and citability; open-source Python scripts for preprocessing and reconstruction are also provided for each modality. BIL enables algorithm benchmarking, machine learning, and teaching using realistic, industrially relevant data. By combining coverage across modalities, length scales, and chemistries with raw data accessibility and a FAIR-aligned web platform, the Battery Imaging Library provides a foundation for openness and reproducibility in battery imaging. The library is available here: https://www.batteryimaginglibrary.com}},
